@@ -1,3 +1,18 @@
+:root {
+  --font-color: black;
+  --actvie-link-container: gray;
+}
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
 .App {
   text-align: center;
 }
