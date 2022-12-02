@@ -17,12 +17,9 @@ function App() {
       <StyledApp>
         <PageNavigation />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/intro" element={<Intro />}></Route>
-          <Route
-            path="/Components/:componentId"
-            element={<Component />}
-          ></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/Components/:componentId" element={<Component />} />
         </Routes>
       </StyledApp>
     </BrowserRouter>
