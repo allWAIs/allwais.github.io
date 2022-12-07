@@ -1,5 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
+interface ContextProviderProps {
+  children: JSX.Element;
+}
+
+interface defaultStateProps {
+  lang: string;
+  setLang: React.Dispatch<React.SetStateAction<string>>;
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}
 const getLocalSotrage = (field: string, defaultValue: string) => {
   return (
     localStorage.getItem(field) ??
@@ -7,16 +17,26 @@ const getLocalSotrage = (field: string, defaultValue: string) => {
     defaultValue
   );
 };
-const ContextStore = createContext({});
 
-export const ContextProvider = (children: JSX.Element): JSX.Element => {
-  const [lang, setLang] = useState(getLocalSotrage("lang", "english"));
-  const [theme, setTheme] = useState(getLocalSotrage("theme", "light"));
-  const info = {
+const defaultState: defaultStateProps = {
+  lang: getLocalSotrage('lang', 'english'),
+  setLang: () => null,
+  theme: getLocalSotrage('theme', 'light'),
+  setTheme: () => null,
+};
+
+export const ContextStore = createContext(defaultState);
+
+export function ContextProvider({ children }: ContextProviderProps) {
+  const [lang, setLang] = useState(defaultState.lang);
+  const [theme, setTheme] = useState(defaultState.theme);
+  const value = {
     lang,
     setLang,
     theme,
     setTheme,
   };
-  return <ContextStore.Provider value={info}>{children}</ContextStore.Provider>;
-};
+  return (
+    <ContextStore.Provider value={value}>{children}</ContextStore.Provider>
+  );
+}

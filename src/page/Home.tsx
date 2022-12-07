@@ -1,21 +1,10 @@
-import styled from "@emotion/styled";
+import { ContentsContainer } from '../components/PageComponent/ComponentContainer';
+import { NavigationContainer } from '../components/PageComponent/NavigationContainer';
 
-const StyledHome = styled.div`
-  display: flex;
-  padding-top: var(--content-padding-top);
-  width: 100%;
-  justify-content: center;
-`;
-const HomeContainer = styled.div`
-  max-width: var(--max-page-width);
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-`;
 export function Home() {
   return (
-    <StyledHome>
-      <HomeContainer>
+    <>
+      <ContentsContainer>
         <h1>Why React WAI</h1>
         <h2>Motivation</h2>
         <div>
@@ -36,7 +25,8 @@ export function Home() {
           to print, audio, and visual media can be much more easily overcome
           through Web technologies.
         </div>
-      </HomeContainer>
-    </StyledHome>
+        <NavigationContainer>Motivation</NavigationContainer>
+      </ContentsContainer>
+    </>
   );
 }
