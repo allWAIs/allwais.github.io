@@ -40,3 +40,9 @@ export function ContextProvider({ children }: ContextProviderProps) {
     <ContextStore.Provider value={value}>{children}</ContextStore.Provider>
   );
 }
+
+export const pxCheck = (value: string) => {
+  const exception = ['px', '%', 'rem', 'em'];
+  if (exception.some((ex) => value.includes(ex))) return value;
+  return value + 'px';
+};

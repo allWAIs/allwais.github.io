@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link, useLocation } from 'react-router-dom';
 import { StyledPageNavigation } from './StyledPageNavigation';
-import { PageLink } from '../PageComponent/Link';
+import { PageLink } from '../PageComponent/PageLink';
 import { Heading } from '../PageComponent/Heading';
 import { ReactComponent as Logo } from '../../logo.svg';
 

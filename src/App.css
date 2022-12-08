@@ -9,6 +9,10 @@
   --sidbar-border-color: #e6e6e6;
 
   --synopsis-width: 230px;
+
+  --editor-background-color: #1e1e1e;
+  --editor-font-color: #ffffff;
+  --input-border-color: #4e4e4e;
 }
 h1,
 h2,
