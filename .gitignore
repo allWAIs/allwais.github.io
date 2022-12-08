@@ -40,7 +40,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+Release
 
 # Dependency directories
 
@@ -223,4 +223,4 @@ storybook-static/
 # public
 public
 
-# End of https://www.toptal.com/developers/gitignore/api/osx,windows,node,visualstudiocode
+build/
