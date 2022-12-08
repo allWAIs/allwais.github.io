@@ -13,23 +13,23 @@ export function PageNavigation() {
   const { pathname } = useLocation();
   return (
     <StyledPageNavigation>
-      <Link to="/" className="hi">
+      <Link to="allWAIs" className="hi">
         <StyledLogo />
       </Link>
       <Heading category="Introduction">
-        <PageLink to="/intro" pathname={pathname}>
+        <PageLink to="allWAIs/intro" pathname={pathname}>
           Why React WAI
         </PageLink>
       </Heading>
       <Heading category="Components">
         <>
-          <PageLink to="/Components/Alert" pathname={pathname}>
+          <PageLink to="allWAIs/Components/Alert" pathname={pathname}>
             Alert
           </PageLink>
-          <PageLink to="/Components/A11yHidden" pathname={pathname}>
+          <PageLink to="allWAIs/Components/A11yHidden" pathname={pathname}>
             A11yHidden
           </PageLink>
-          <PageLink to="/Components/Title" pathname={pathname}>
+          <PageLink to="allWAIs/Components/Title" pathname={pathname}>
             Title
           </PageLink>
         </>

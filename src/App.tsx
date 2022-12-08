@@ -18,9 +18,12 @@ function App() {
         <StyledApp>
           <PageNavigation />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/intro" element={<Intro />} />
-            <Route path="/Components/:componentId" element={<Component />} />
+            <Route path="/allWAIs" element={<Home />} />
+            <Route path="/allWAIs/intro" element={<Intro />} />
+            <Route
+              path="/allWAIs/Components/:componentId"
+              element={<Component />}
+            />
           </Routes>
         </StyledApp>
       </BrowserRouter>
