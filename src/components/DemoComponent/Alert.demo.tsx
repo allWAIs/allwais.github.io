@@ -14,7 +14,7 @@ export function DemoAlert() {
           <PropsInput name="width" init={'100%'} handler={setWidth} />
           <PropsInput name="height" init={'50px'} handler={setHeight} />
         </ComponentTag>
-        <PropsInput name="children" init={'50px'} handler={setChildren} />
+        <PropsInput name="children" init={'Alert'} handler={setChildren} />
         <br />
         <ComponentTag name="Alert" status="closed" />
       </DemoContainer>
