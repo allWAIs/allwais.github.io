@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import { PageNavigation } from './components';
-import { Home, Intro, Component } from './page';
+import { Home, Intro, Component } from './pages';
 import { ContextProvider } from './utils';
 
 import './App.css';

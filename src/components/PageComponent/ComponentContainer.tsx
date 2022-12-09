@@ -9,6 +9,7 @@ const ContentContainer = styled.div`
   display: flex;
   justify-content: center;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
 `;
 const ComponentContainer = styled.div`
@@ -20,9 +21,14 @@ const ComponentContainer = styled.div`
   margin-top: var(--content-padding);
   margin-bottom: var(--content-padding);
   margin-right: var(--synopsis-width);
+  margin-left: var(--sidebar-width);
   height: fit-content;
   width: 100%;
   box-sizing: border-box;
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 `;
 export function ContentsContainer({ children }: ContentsContainerProps) {
   return (

@@ -20,6 +20,9 @@ export const Navigation = styled.div`
   box-sizing: border-box;
   top: 0;
   right: 0;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 function LanguageChanger() {
