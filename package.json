@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "addbuild": "node cmd/addBuild.js",
     "removebuild": "node cmd/removeBuild.js",
-    "deploy": "npm run build && npm run removebuild && gh-pages -d build && npm run addbuild"
+    "predeploy": "npm run build && cp build/index.html build/404.html",
+    "deploy": "npm run predeploy && npm run removebuild && gh-pages -d build && npm run addbuild"
   },
   "eslintConfig": {
     "extends": [
