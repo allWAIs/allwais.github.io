@@ -1,11 +1,19 @@
 import { useContext } from 'react';
 import { ContextStore } from '../utils';
 import { useParams } from 'react-router-dom';
+import styled from '@emotion/styled';
 import { data } from './ComponentInfo';
-import { DemoComponent } from '../components/DemoComponent';
-import { NavigationContainer } from '../components/PageComponent/NavigationContainer';
-import { ContentsContainer } from '../components/PageComponent/ComponentContainer';
-
+import {
+  NavigationContainer,
+  ContentsContainer,
+  DemoComponent,
+} from '../components';
+const PropsIntro = styled.pre`
+  background-color: var(--editor-background-color);
+  color: var(--editor-font-color);
+  padding: 10px;
+  line-height: 40px;
+`;
 export function Component() {
   const { lang } = useContext(ContextStore);
   const { componentId } = useParams();
@@ -25,7 +33,7 @@ export function Component() {
       <h2 id="keyboard">{ref.keyboard}</h2>
       <div>{comp.keyboard}</div>
       <h2 id="props">{ref.props}</h2>
-      <div>{comp.props}</div>
+      <PropsIntro>{comp.props}</PropsIntro>
 
       <NavigationContainer>
         {Object.entries(ref).map(([key, value]) => (

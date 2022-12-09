@@ -36,7 +36,7 @@ export const data: dataType = {
     Title: {
       title: 'Title',
       about:
-        "Navigating through the <h1> and <h2> give a user an overview of a page and how its content is structured. The <h3> through <h6> elements provide a quick understanding of the details in each section.",
+        'Navigating through the <h1> and <h2> give a user an overview of a page and how its content is structured. The <h3> through <h6> elements provide a quick understanding of the details in each section.',
       a11y: 'Heading tags should be in order. That means an <h1> is followed by an <h2>, an <h2> is followed by a <h2> or <h3> and so on. It is ok to skip heading levels when going up in order (ex. <h4> to <h1>).',
       keyboard: 'Not applicable',
       props: [
@@ -45,7 +45,7 @@ export const data: dataType = {
         'focusable(string):It determines Component focusable',
         'children(string):It determines title text',
       ].join('\n'),
-      ref:'https://a11y-style-guide.com/style-guide/section-structure.html'
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
     ref: {
       about: 'About this component',
@@ -71,7 +71,7 @@ export const data: dataType = {
     A11yHidden: {
       title: 'A11yHidden',
       about:
-        '때때로 웹 페이지에서 요소를 숨겨야 하는 경우가 있습니다. 일반적인 방법은 CSS(display:none; and visibility:hidden;) 또는 HTML5 'hidden' attribute을 사용하는 것이다. 이러한 properties는 화면의 요소뿐만 아니라 스크린리더 사용자를 위한 요소도 숨깁니다. 따라서, 이러한 요소들은 보조 기술(AT)로 보이거나 음성화가 안될 것입니다',
+        '때때로 웹 페이지에서 요소를 숨겨야 하는 경우가 있습니다. 일반적인 방법은 CSS(display:none; and visibility:hidden;) 또는 HTML5 hidden attribute을 사용하는 것이다. 이러한 properties는 화면의 요소뿐만 아니라 스크린리더 사용자를 위한 요소도 숨깁니다. 따라서, 이러한 요소들은 보조 기술(AT)로 보이거나 음성화가 안될 것입니다',
       a11y: 'A11yHidden은 스크린 유저가 접근할 때는 접근할 수 있지만, 화면에서 요소를 사라지게 합니다. 이상적으로는 모든 해결책을 결합하여 모든 브라우저에서 제대로 작동하는지 확인하는 것이 가장 좋습니다.',
       keyboard: '없음',
       props: [
@@ -84,7 +84,7 @@ export const data: dataType = {
     Title: {
       title: 'Title',
       about:
-        "<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.",
+        '<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.',
       a11y: '제목 태그는 순서대로 배치되어야만 한다. 즉, <h1> 뒤에 <h2>, <h2> 뒤에 <h2> 또는 <h3> 등이 뒤따른다는 것이다. 순서대로 올라갈 때 헤딩 레벨을 건너뛰어도 괜찮습니다(예: <h4>에서 <h1>).',
       keyboard: '없음',
       props: [
@@ -93,7 +93,7 @@ export const data: dataType = {
         'focusable(string):컴포넌트의 포커스 가능함을 결정합니다',
         'children(string):컴포넌트의 텍스트 내용을 결정합니다',
       ].join('\n'),
-      ref:'https://a11y-style-guide.com/style-guide/section-structure.html'
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
     ref: {
       about: '컴포넌트 특징',

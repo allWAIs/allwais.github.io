@@ -1,4 +1,2 @@
-import { ComponentTag } from './ComponentTag';
-import { DemoContainer } from './DemoContainer';
-
-export { ComponentTag, DemoContainer };
+export * from './ComponentTag';
+export * from './DemoContainer';
