@@ -9,6 +9,7 @@ import { MobileNavigation } from './MobileNavigation';
 const StyledLogo = styled(Logo)`
   width: 100px;
   height: 100px;
+  stroke: var(--font-color);
 `;
 const CloseSidebar = styled.button`
   position: absolute;
@@ -16,10 +17,15 @@ const CloseSidebar = styled.button`
   right: 10px;
   border: 0;
   background: none;
+  display: none;
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
 `;
 export function PageNavigation() {
   const [sidebar, setSidebar] = useState(false);
   const { pathname } = useLocation();
+  const closeSidebar = () => setSidebar(false);
   return (
     <>
       <MobileNavigation sidebar={sidebar} handler={setSidebar} />
@@ -27,7 +33,7 @@ export function PageNavigation() {
         <Link to="allWAIs" className="hi">
           <StyledLogo />
         </Link>
-        <CloseSidebar onClick={() => setSidebar(false)}>⨉</CloseSidebar>
+        <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
         <Heading category="Introduction">
           <PageLink to="allWAIs/intro" pathname={pathname}>
             Why React WAI

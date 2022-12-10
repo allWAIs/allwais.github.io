@@ -1,10 +1,11 @@
 :root {
   --font-color: black;
+  --background-color: white;
   --actvie-link-container: #dfdfdf;
   --max-page-width: 980px;
   --content-padding: 50px;
 
-  --sidebar-width: 350px;
+  --sidebar-width: 300px;
   --sidebar-color: #ebebeb;
   --sidbar-border-color: #e6e6e6;
 
@@ -13,6 +14,9 @@
   --editor-background-color: #1e1e1e;
   --editor-font-color: #ffffff;
   --input-border-color: #4e4e4e;
+}
+* {
+  color: var(--font-color);
 }
 h1,
 h2,
@@ -34,6 +38,7 @@ li {
 }
 
 body {
+  background-color: var(--background-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -45,4 +50,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+select {
+  background-color: var(--background-color);
 }

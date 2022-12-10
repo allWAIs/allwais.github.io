@@ -30,6 +30,7 @@ export const ContextStore = createContext(defaultState);
 export function ContextProvider({ children }: ContextProviderProps) {
   const [lang, setLang] = useState(defaultState.lang);
   const [theme, setTheme] = useState(defaultState.theme);
+
   const value = {
     lang,
     setLang,

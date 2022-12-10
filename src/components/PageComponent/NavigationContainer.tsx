@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { ContextStore } from '../../utils/index';
-
+import { ReactComponent as ToggleTheme } from '../../theme.svg';
 interface NavigationContainerProps {
   children: string | JSX.Element[] | JSX.Element;
 }
 interface SetLocalStorageProps {
   value: string;
 }
+const StyledButton = styled(ToggleTheme)`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  transform: translate3d(0, -25px, 0);
+  fill: var(--font-color);
+`;
 export const Navigation = styled.div`
   position: fixed;
   display: flex;
@@ -27,6 +34,7 @@ export const Navigation = styled.div`
 
 function LanguageChanger() {
   const { lang, setLang } = useContext(ContextStore);
+
   const handleChange = ({ value }: SetLocalStorageProps) => {
     localStorage.setItem('lang', value);
     setLang(value);
@@ -39,9 +47,31 @@ function LanguageChanger() {
   );
 }
 
+function ThemeChanger() {
+  const { theme, setTheme } = useContext(ContextStore);
+  const toggleTheme = (theme: string) => {
+    if (theme === 'dark') {
+      document.documentElement.style.setProperty('--font-color', 'white');
+      document.documentElement.style.setProperty('--background-color', 'black');
+      document.documentElement.style.setProperty('--sidebar-color', 'black');
+    }
+    if (theme === 'light') {
+      document.documentElement.style.setProperty('--font-color', 'black');
+      document.documentElement.style.setProperty('--background-color', 'white');
+      document.documentElement.style.setProperty('--sidebar-color', '#ebebeb');
+    }
+  };
+  const handleChange = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    localStorage.setItem('theme', theme);
+    toggleTheme(theme);
+  };
+  return <StyledButton onClick={() => handleChange()}>convert</StyledButton>;
+}
 export function NavigationContainer({ children }: NavigationContainerProps) {
   return (
     <Navigation>
+      <ThemeChanger />
       <LanguageChanger />
       {children}
     </Navigation>
