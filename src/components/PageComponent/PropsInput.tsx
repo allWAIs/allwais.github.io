@@ -22,11 +22,13 @@ export function PropsInput({ name, handler, init }: IPropsInput) {
   return (
     <>
       <br />
+
       {name === 'children' ? null : (
         <>
-          <PropsText>{name}</PropsText>=<BracketText>&#123;</BracketText>
+          <PropsText>{name}</PropsText>=
         </>
       )}
+      <BracketText>&#123;</BracketText>
       <StyledInput
         defaultValue={init}
         onChange={({ target }) => handleChange(target.value)}

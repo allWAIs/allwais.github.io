@@ -11,16 +11,26 @@ const LinkContainer = styled.div`
 
 export interface LinkProps {
   to: string;
-  children: string;
-  pathname: string;
+  children?: string;
+  pathname?: string;
 }
 
 export function PageLink({ to, children, pathname }: LinkProps) {
   return (
     <Link to={to}>
       <LinkContainer className={pathname === to ? 'active' : ''}>
-        {pathname === to}
         {children}
+      </LinkContainer>
+    </Link>
+  );
+}
+export function ComponentPageLink({ to, pathname }: LinkProps) {
+  const ComponentPageTo = 'allWAIs/Components/' + to;
+  if (to === 'ref') return null;
+  return (
+    <Link to={ComponentPageTo}>
+      <LinkContainer className={pathname === ComponentPageTo ? 'active' : ''}>
+        {to}
       </LinkContainer>
     </Link>
   );

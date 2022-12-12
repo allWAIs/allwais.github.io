@@ -3,11 +3,7 @@ import { ContextStore } from '../utils';
 import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { data } from './ComponentInfo';
-import {
-  NavigationContainer,
-  ContentsContainer,
-  DemoComponent,
-} from '../components';
+import { Sidebar, ContentsContainer, DemoComponent } from '../components';
 const PropsIntro = styled.pre`
   background-color: var(--editor-background-color);
   color: var(--editor-font-color);
@@ -35,7 +31,7 @@ export function Component() {
       <h2 id="props">{ref.props}</h2>
       <PropsIntro>{comp.props}</PropsIntro>
 
-      <NavigationContainer>
+      <Sidebar>
         {Object.entries(ref).map(([key, value]) => (
           <div key={key}>
             <a href={'#' + key} aria-current="location">
@@ -43,7 +39,7 @@ export function Component() {
             </a>
           </div>
         ))}
-      </NavigationContainer>
+      </Sidebar>
     </ContentsContainer>
   );
 }

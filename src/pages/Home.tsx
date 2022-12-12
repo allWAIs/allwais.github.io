@@ -1,6 +1,5 @@
 import { ContentsContainer } from '../components/PageComponent/ComponentContainer';
-import { NavigationContainer } from '../components/PageComponent/NavigationContainer';
-
+import { Sidebar } from '../components';
 export function Home() {
   return (
     <>
@@ -25,7 +24,7 @@ export function Home() {
           to print, audio, and visual media can be much more easily overcome
           through Web technologies.
         </div>
-        <NavigationContainer>Motivation</NavigationContainer>
+        <Sidebar>Motivation</Sidebar>
       </ContentsContainer>
     </>
   );

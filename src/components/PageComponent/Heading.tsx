@@ -1,5 +1,5 @@
 interface HeadingProps {
-  children: JSX.Element | string;
+  children: JSX.Element[] | JSX.Element | string;
   category: string;
 }
 export function Heading({ children, category }: HeadingProps) {

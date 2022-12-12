@@ -11,8 +11,6 @@ interface SetLocalStorageProps {
 const StyledButton = styled(ToggleTheme)`
   width: 25px;
   height: 25px;
-  position: absolute;
-  transform: translate3d(0, -25px, 0);
   fill: var(--font-color);
 `;
 export const Navigation = styled.div`
@@ -68,7 +66,7 @@ function ThemeChanger() {
   };
   return <StyledButton onClick={() => handleChange()}>convert</StyledButton>;
 }
-export function NavigationContainer({ children }: NavigationContainerProps) {
+export function Sidebar({ children }: NavigationContainerProps) {
   return (
     <Navigation>
       <ThemeChanger />
