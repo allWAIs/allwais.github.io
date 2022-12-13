@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@octokit/auth-app": "^4.0.7",
     "@octokit/rest": "^19.0.5",
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
