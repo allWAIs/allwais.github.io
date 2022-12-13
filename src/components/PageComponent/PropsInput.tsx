@@ -1,9 +1,10 @@
+import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
 import { PropsText, BracketText } from './ColorSelector';
 import { pxCheck } from '../../utils';
 interface IPropsInput {
   name: string;
-  handler: Function;
+  handler: Dispatch<SetStateAction<any>>;
   init: string;
 }
 const StyledInput = styled.input`

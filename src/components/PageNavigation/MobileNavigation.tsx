@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface MobileNavigationProps {
-  handler: Function;
+  handler: (value: boolean) => void;
   sidebar: boolean;
 }
 const MobileNavigationContainer = styled.div`

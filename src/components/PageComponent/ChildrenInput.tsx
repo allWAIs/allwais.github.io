@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 interface IChildrenInputProps {
   name: string;
-  handler: Function;
+  handler: (value: string) => void;
   init: string;
 }
 const StyledChildrenInput = styled.input`
@@ -11,7 +11,7 @@ const StyledChildrenInput = styled.input`
   color: var(--editor-font-color);
 `;
 
-export function ChildrenInput({ name, handler, init }: IChildrenInputProps) {
+export function ChildrenInput({ handler, init }: IChildrenInputProps) {
   return (
     <>
       <br />

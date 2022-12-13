@@ -20,13 +20,12 @@ export function OpenIssue() {
 
   const sendIssue = async (title?: string, detail?: string) => {
     try {
-      if (typeof title && typeof detail) {
-        console.log(process.env);
+      if (typeof title !== undefined && typeof detail !== undefined) {
         await octokit.rest.issues.create({
           owner: 'allWAIs',
           repo: 'allWAIs',
           title: title + '',
-          body: detail,
+          body: detail || '',
         });
       }
     } catch (error) {
