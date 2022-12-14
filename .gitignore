@@ -222,6 +222,6 @@ storybook-static/
 
 # public
 !public/404.html
-
+!public/.github/workflows/secret.yml
 
 build/

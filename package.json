@@ -2,7 +2,7 @@
   "name": "allwais",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -28,7 +28,8 @@
     "addbuild": "node cmd/addBuild.js",
     "removebuild": "node cmd/removeBuild.js",
     "predeploy": "npm run build && cp build/index.html build/404.html",
-    "deploy": "npm run predeploy && npm run removebuild && gh-pages -d build && npm run addbuild"
+    "ghpage": "git subtree push --prefix build/ origin gh-pages",
+    "deploy": "npm run predeploy && npm run removebuild && npm run ghpage && npm run addbuild"
   },
   "eslintConfig": {
     "extends": [
