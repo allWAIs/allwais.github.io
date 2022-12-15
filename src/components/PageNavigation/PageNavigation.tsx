@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { StyledPageNavigation } from './StyledPageNavigation';
 import { PageLink } from '../PageComponent/PageLink';
@@ -7,6 +7,7 @@ import { Heading } from '../PageComponent/Heading';
 import { ReactComponent as Logo } from '../../logo.svg';
 import { MobileNavigation } from './MobileNavigation';
 import { ComponentPageNavigation } from './ComponentPageNavigation';
+import { ContextStore } from '../../store';
 const StyledLogo = styled(Logo)`
   width: 100px;
   height: 100px;
@@ -29,10 +30,9 @@ const Search = styled.input`
   border-bottom: 1px solid black;
 `;
 export function PageNavigation() {
-  const [sidebar, setSidebar] = useState(false);
+  const { sidebar, setSidebar, closeSidebar } = useContext(ContextStore);
   const { pathname } = useLocation();
   const [keyword, setKeyword] = useState('');
-  const closeSidebar = () => setSidebar(false);
 
   return (
     <>

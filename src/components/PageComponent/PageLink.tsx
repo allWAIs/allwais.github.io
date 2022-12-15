@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { ContextStore } from '../../store';
 const LinkContainer = styled.div`
   &.active {
     font-weight: 500;
@@ -16,8 +18,9 @@ export interface LinkProps {
 }
 
 export function PageLink({ to, children, pathname }: LinkProps) {
+  const { closeSidebar } = useContext(ContextStore);
   return (
-    <Link to={to}>
+    <Link to={to} onClick={closeSidebar}>
       <LinkContainer className={pathname === to ? 'active' : ''}>
         {children}
       </LinkContainer>
