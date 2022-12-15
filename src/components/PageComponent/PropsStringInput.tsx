@@ -2,9 +2,9 @@ import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
 import { PropsText, BracketText } from './ColorSelector';
 import { pxCheck } from '../../utils';
-interface IPropsInput {
+interface IPropsStringInput {
   name: string;
-  handler: Dispatch<SetStateAction<any>>;
+  handler: Dispatch<SetStateAction<string>>;
   init: string;
 }
 const StyledInput = styled.input`
@@ -14,7 +14,7 @@ const StyledInput = styled.input`
   color: var(--editor-font-color);
 `;
 
-export function PropsInput({ name, handler, init }: IPropsInput) {
+export function PropsStringInput({ name, handler, init }: IPropsStringInput) {
   const handleChange = (value: string) => {
     const numberAttribute = ['width', 'height'];
     if (numberAttribute.includes(name)) return handler(pxCheck(value));

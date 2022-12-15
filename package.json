@@ -28,8 +28,7 @@
     "addbuild": "node cmd/addBuild.js",
     "removebuild": "node cmd/removeBuild.js",
     "predeploy": "npm run build && cp build/index.html build/404.html",
-    "ghpage": "git subtree push --prefix build/ origin gh-pages",
-    "deploy": "npm run predeploy && npm run removebuild && npm run ghpage && npm run addbuild"
+    "deploy": "npm run predeploy && npm run removebuild && gh-pages -d build && npm run addbuild"
   },
   "eslintConfig": {
     "extends": [

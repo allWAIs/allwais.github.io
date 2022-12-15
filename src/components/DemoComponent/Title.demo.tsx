@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Title } from 'react-wai';
-import { PropsInput } from './../PageComponent';
+import { PropsStringInput, PropsBooleanInput } from './../PageComponent';
 import { ComponentTag, DemoContainer } from './../EditorComponent';
 
 type typeLv = 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
@@ -20,11 +20,19 @@ export function DemoTitle() {
     <>
       <DemoContainer>
         <ComponentTag name="Title">
-          <PropsInput name="lv" init={lv} handler={setLv} />
-          <PropsInput name="hidden" init={'false'} handler={setHidden} />
-          <PropsInput name="focusable" init={'false'} handler={setFocusable} />
+          <PropsStringInput name="lv" init={lv} handler={setLv} />
+          <PropsStringInput name="hidden" init={'false'} handler={setHidden} />
+          <PropsBooleanInput
+            name="focusable"
+            init={'false'}
+            handler={setFocusable}
+          />
         </ComponentTag>
-        <PropsInput name="children" init={children} handler={setChildren} />
+        <PropsStringInput
+          name="children"
+          init={children}
+          handler={setChildren}
+        />
         <br />
         <ComponentTag name="Title" status="closed" />
       </DemoContainer>
