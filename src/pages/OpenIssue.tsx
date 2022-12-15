@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { ContentsContainer } from '../components';
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
+import styled from '@emotion/styled';
 
 const octokit = new Octokit({
   authStrategy: createAppAuth,
@@ -13,7 +14,11 @@ const octokit = new Octokit({
     installationId: process.env.REACT_APP_INSTALLATION_ID,
   },
 });
-
+const StyledButton = styled.button`
+  border: 0;
+  background-color: var(--font-color);
+  color: var(--background-color);
+`;
 export function OpenIssue() {
   const issueTitle = useRef<HTMLInputElement | null>(null);
   const issueDetail = useRef<HTMLTextAreaElement | null>(null);
@@ -41,13 +46,13 @@ export function OpenIssue() {
         </span>
         <input id="issuetitle" ref={issueTitle}></input>
         <textarea name="" id="issuedetail" ref={issueDetail}></textarea>
-        <button
+        <StyledButton
           onClick={() =>
             sendIssue(issueTitle?.current?.value, issueDetail?.current?.value)
           }
         >
           send it
-        </button>
+        </StyledButton>
       </ContentsContainer>
     </>
   );
