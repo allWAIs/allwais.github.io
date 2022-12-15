@@ -30,7 +30,7 @@ const IssueTitle = styled.input`
   font-size: 16px;
   padding: 15px;
   border-radius: 10px;
-  color: var(--background-color);
+  color: black;
 `;
 
 const IssueComment = styled.textarea`
@@ -38,7 +38,7 @@ const IssueComment = styled.textarea`
   padding: 15px;
   height: 400px;
   border-radius: 10px;
-  color: var(--background-color);
+  color: black;
 `;
 
 export function OpenIssue() {
