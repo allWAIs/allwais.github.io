@@ -17,7 +17,6 @@ const octokit = new Octokit({
 export function OpenIssue() {
   const issueTitle = useRef<HTMLInputElement | null>(null);
   const issueDetail = useRef<HTMLTextAreaElement | null>(null);
-  console.log(process.env.REACT_APP_APP_ID);
   const sendIssue = async (title?: string, detail?: string) => {
     try {
       if (typeof title !== undefined && typeof detail !== undefined) {
