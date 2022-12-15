@@ -47,22 +47,9 @@ function LanguageChanger() {
 
 function ThemeChanger() {
   const { theme, setTheme } = useContext(ContextStore);
-  const toggleTheme = (theme: string) => {
-    if (theme === 'dark') {
-      document.documentElement.style.setProperty('--font-color', 'white');
-      document.documentElement.style.setProperty('--background-color', 'black');
-      document.documentElement.style.setProperty('--sidebar-color', 'black');
-    }
-    if (theme === 'light') {
-      document.documentElement.style.setProperty('--font-color', 'black');
-      document.documentElement.style.setProperty('--background-color', 'white');
-      document.documentElement.style.setProperty('--sidebar-color', '#ebebeb');
-    }
-  };
+
   const handleChange = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
-    localStorage.setItem('theme', theme);
-    toggleTheme(theme);
   };
   return <StyledButton onClick={() => handleChange()}>convert</StyledButton>;
 }
