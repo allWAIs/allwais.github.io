@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
-import { ContextStore } from '../../utils/index';
+import { ContextStore } from '../../store/index';
 import { ReactComponent as ToggleTheme } from '../../theme.svg';
 interface NavigationContainerProps {
   children: string | JSX.Element[] | JSX.Element;

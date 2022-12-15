@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ContextStore } from '../utils';
+import { ContextStore } from '../store';
 import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { data } from './ComponentInfo';

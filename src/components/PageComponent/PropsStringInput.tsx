@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
 import { PropsText, BracketText } from './ColorSelector';
-import { pxCheck } from '../../utils';
+import { pxCheck } from '../../store';
 interface IPropsStringInput {
   name: string;
   handler: Dispatch<SetStateAction<string>>;

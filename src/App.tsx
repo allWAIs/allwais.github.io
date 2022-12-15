@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PageNavigation } from './components';
 import { Home, Intro, Component, OpenIssue } from './pages';
-import { ContextProvider } from './utils';
+import { ContextProvider } from './store';
 
 import './App.css';
 import styled from '@emotion/styled';
