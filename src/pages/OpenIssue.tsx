@@ -1,11 +1,12 @@
 import { useRef, useContext } from 'react';
+import { redirect } from 'react-router-dom';
 import { Title } from 'react-wai';
-import { ContentsContainer, Sidebar } from '../components';
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
 import styled from '@emotion/styled';
 import { data } from './OpenIssue.language';
 import { ContextStore } from '../store';
+import { ContentsContainer, Sidebar } from '../components';
 const octokit = new Octokit({
   authStrategy: createAppAuth,
   auth: {
@@ -29,6 +30,7 @@ const IssueTitle = styled.input`
   font-size: 16px;
   padding: 15px;
   border-radius: 10px;
+  color: var(--background-color);
 `;
 
 const IssueComment = styled.textarea`
@@ -36,12 +38,14 @@ const IssueComment = styled.textarea`
   padding: 15px;
   height: 400px;
   border-radius: 10px;
+  color: var(--background-color);
 `;
 
 export function OpenIssue() {
   const issueTitle = useRef<HTMLInputElement | null>(null);
   const issueDetail = useRef<HTMLTextAreaElement | null>(null);
   const { lang } = useContext(ContextStore);
+
   const text = data[lang];
   const sendIssue = async (title?: string, detail?: string) => {
     try {
@@ -53,6 +57,7 @@ export function OpenIssue() {
           body: detail || '',
         });
       }
+      redirect('/issue-complete');
     } catch (error) {
       console.log(error);
     }

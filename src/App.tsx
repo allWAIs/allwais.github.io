@@ -5,6 +5,7 @@ import { ContextProvider } from './store';
 
 import './App.css';
 import styled from '@emotion/styled';
+import { IssueComplete } from './pages/IssueComplete';
 
 export const StyledApp = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/intro" element={<Intro />} />
             <Route path="/open-issue" element={<OpenIssue />} />
+            <Route path="/issue-complete" element={<IssueComplete />} />
             <Route path="/Components/:componentId" element={<Component />} />
           </Routes>
         </StyledApp>
