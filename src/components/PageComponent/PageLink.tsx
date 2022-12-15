@@ -28,11 +28,11 @@ export function PageLink({ to, children, pathname }: LinkProps) {
   );
 }
 export function ComponentPageLink({ to, pathname }: LinkProps) {
+  const { closeSidebar } = useContext(ContextStore);
   const ComponentPageTo = 'Components/' + to;
-
   if (to === 'ref') return null;
   return (
-    <Link to={ComponentPageTo}>
+    <Link to={ComponentPageTo} onClick={closeSidebar}>
       <LinkContainer
         className={pathname === '/' + ComponentPageTo ? 'active' : ''}
       >

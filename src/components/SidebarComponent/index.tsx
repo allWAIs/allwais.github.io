@@ -13,6 +13,11 @@ const StyledButton = styled(ToggleTheme)`
   height: 25px;
   fill: var(--font-color);
 `;
+const StyledChildren = styled.div`
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+`;
 export const Navigation = styled.div`
   position: fixed;
   display: flex;
@@ -26,7 +31,12 @@ export const Navigation = styled.div`
   top: 0;
   right: 0;
   @media screen and (max-width: 900px) {
-    display: none;
+    flex-direction: row;
+    margin: 10px;
+    border: none;
+    padding-right: 10px;
+    padding-top: 10px;
+    flex-direction: row-reverse;
   }
 `;
 
@@ -51,14 +61,14 @@ function ThemeChanger() {
   const handleChange = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
-  return <StyledButton onClick={() => handleChange()}>convert</StyledButton>;
+  return <StyledButton onClick={() => handleChange()} />;
 }
 export function Sidebar({ children }: NavigationContainerProps) {
   return (
     <Navigation>
       <ThemeChanger />
       <LanguageChanger />
-      {children}
+      <StyledChildren>{children}</StyledChildren>
     </Navigation>
   );
 }

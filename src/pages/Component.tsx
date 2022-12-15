@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { data } from './Component.language';
 import { Sidebar, ContentsContainer, DemoComponent } from '../components';
-const PropsIntro = styled.pre`
+const PropsIntro = styled.div`
   background-color: var(--editor-background-color);
   color: var(--editor-font-color);
   padding: 10px;
   line-height: 40px;
+  white-space: break-spaces;
 `;
 export function Component() {
   const { lang } = useContext(ContextStore);

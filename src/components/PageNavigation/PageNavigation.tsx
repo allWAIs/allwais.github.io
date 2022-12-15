@@ -39,7 +39,7 @@ export function PageNavigation() {
     <>
       <MobileNavigation sidebar={sidebar} handler={setSidebar} />
       <StyledPageNavigation sidebar={sidebar}>
-        <Link to="/" className="hi">
+        <Link to="/">
           <StyledLogo />
         </Link>
         <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
