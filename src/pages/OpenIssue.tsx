@@ -1,5 +1,5 @@
 import { useRef, useContext } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Title } from 'react-wai';
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
@@ -45,7 +45,7 @@ export function OpenIssue() {
   const issueTitle = useRef<HTMLInputElement | null>(null);
   const issueDetail = useRef<HTMLTextAreaElement | null>(null);
   const { lang } = useContext(ContextStore);
-
+  const redirect = useNavigate();
   const text = data[lang];
   const sendIssue = async (title?: string, detail?: string) => {
     try {
@@ -56,8 +56,8 @@ export function OpenIssue() {
           title: title + '',
           body: detail || '',
         });
+        redirect('/issue-complete');
       }
-      redirect('/issue-complete');
     } catch (error) {
       console.log(error);
     }
