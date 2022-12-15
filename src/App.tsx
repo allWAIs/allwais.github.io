@@ -13,17 +13,14 @@ export const StyledApp = styled.div`
 function App() {
   return (
     <ContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <StyledApp>
           <PageNavigation />
           <Routes>
-            <Route path="/allWAIs" element={<Home />} />
-            <Route path="/allWAIs/intro" element={<Intro />} />
-            <Route path="/allWAIs/open-issue" element={<OpenIssue />} />
-            <Route
-              path="/allWAIs/Components/:componentId"
-              element={<Component />}
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/intro" element={<Intro />} />
+            <Route path="/open-issue" element={<OpenIssue />} />
+            <Route path="/Components/:componentId" element={<Component />} />
           </Routes>
         </StyledApp>
       </BrowserRouter>

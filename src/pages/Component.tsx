@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ContextStore } from '../store';
 import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { data } from './ComponentInfo';
+import { data } from './Component.language';
 import { Sidebar, ContentsContainer, DemoComponent } from '../components';
 const PropsIntro = styled.pre`
   background-color: var(--editor-background-color);

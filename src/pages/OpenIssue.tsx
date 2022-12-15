@@ -1,9 +1,11 @@
-import { useRef } from 'react';
-import { ContentsContainer } from '../components';
+import { useRef, useContext } from 'react';
+import { Title } from 'react-wai';
+import { ContentsContainer, Sidebar } from '../components';
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
 import styled from '@emotion/styled';
-
+import { data } from './OpenIssue.language';
+import { ContextStore } from '../store';
 const octokit = new Octokit({
   authStrategy: createAppAuth,
   auth: {
@@ -14,14 +16,33 @@ const octokit = new Octokit({
     installationId: process.env.REACT_APP_INSTALLATION_ID,
   },
 });
+
 const StyledButton = styled.button`
   border: 0;
   background-color: var(--font-color);
   color: var(--background-color);
+  padding: 15px;
+  border-radius: 10px;
 `;
+
+const IssueTitle = styled.input`
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 10px;
+`;
+
+const IssueComment = styled.textarea`
+  font-size: 16px;
+  padding: 15px;
+  height: 400px;
+  border-radius: 10px;
+`;
+
 export function OpenIssue() {
   const issueTitle = useRef<HTMLInputElement | null>(null);
   const issueDetail = useRef<HTMLTextAreaElement | null>(null);
+  const { lang } = useContext(ContextStore);
+  const text = data[lang];
   const sendIssue = async (title?: string, detail?: string) => {
     try {
       if (typeof title !== undefined && typeof detail !== undefined) {
@@ -39,21 +60,35 @@ export function OpenIssue() {
   return (
     <>
       <ContentsContainer>
-        <h1>Open Issue on github</h1>
-        <span>
-          If you have any improvements to this page or react-wai, please fill
-          them out!
-        </span>
-        <input id="issuetitle" ref={issueTitle}></input>
-        <textarea name="" id="issuedetail" ref={issueDetail}></textarea>
+        <Title lv="1">{text.title}</Title>
+        <span>{text.desc}</span>
+        <IssueTitle
+          id="issuetitle"
+          ref={issueTitle}
+          placeholder={text.titleph}
+        ></IssueTitle>
+        <IssueComment
+          id="issuedetail"
+          ref={issueDetail}
+          placeholder={text.commentph}
+        ></IssueComment>
         <StyledButton
           onClick={() =>
             sendIssue(issueTitle?.current?.value, issueDetail?.current?.value)
           }
         >
-          send it
+          {text.button}
         </StyledButton>
       </ContentsContainer>
+      <Sidebar>
+        <a
+          href="https://github.com/allWAIs/react-wai"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {text.visit}
+        </a>
+      </Sidebar>
     </>
   );
 }

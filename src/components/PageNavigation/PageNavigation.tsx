@@ -25,9 +25,10 @@ const CloseSidebar = styled.button`
   }
 `;
 const Search = styled.input`
+  padding: 5px;
   background: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--font-color);
 `;
 export function PageNavigation() {
   const { sidebar, setSidebar, closeSidebar } = useContext(ContextStore);
@@ -38,8 +39,8 @@ export function PageNavigation() {
     <>
       <MobileNavigation sidebar={sidebar} handler={setSidebar} />
       <StyledPageNavigation sidebar={sidebar}>
-        <Link to="allWAIs" className="hi">
-          <StyledLogo></StyledLogo>
+        <Link to="/" className="hi">
+          <StyledLogo />
         </Link>
         <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
         <Search
@@ -52,13 +53,13 @@ export function PageNavigation() {
         ) : (
           <>
             <Heading category="Introduction">
-              <PageLink to="allWAIs/intro" pathname={pathname}>
+              <PageLink to="/intro" pathname={pathname}>
                 Why React WAI
               </PageLink>
             </Heading>
             <ComponentPageNavigation pathname={pathname} keyword={keyword} />
             <Heading category="Improve this page">
-              <PageLink to="allWAIs/open-issue" pathname={pathname}>
+              <PageLink to="/open-issue" pathname={pathname}>
                 Open Issue on github
               </PageLink>
             </Heading>

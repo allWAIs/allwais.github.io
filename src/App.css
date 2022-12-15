@@ -17,6 +17,7 @@
 }
 * {
   color: var(--font-color);
+  line-height: 1.5;
 }
 h1,
 h2,

@@ -5,7 +5,7 @@ import { ContextStore } from '../../store';
 const LinkContainer = styled.div`
   &.active {
     font-weight: 500;
-    background-color: var(--actvie-link-container);
+    border: 1px solid var(--actvie-link-container);
     border-radius: 10px;
   }
   padding: 5px 5px;
@@ -28,11 +28,14 @@ export function PageLink({ to, children, pathname }: LinkProps) {
   );
 }
 export function ComponentPageLink({ to, pathname }: LinkProps) {
-  const ComponentPageTo = 'allWAIs/Components/' + to;
+  const ComponentPageTo = 'Components/' + to;
+
   if (to === 'ref') return null;
   return (
     <Link to={ComponentPageTo}>
-      <LinkContainer className={pathname === ComponentPageTo ? 'active' : ''}>
+      <LinkContainer
+        className={pathname === '/' + ComponentPageTo ? 'active' : ''}
+      >
         {to}
       </LinkContainer>
     </Link>
