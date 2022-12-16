@@ -23,6 +23,7 @@ export function Component() {
     <ContentsContainer>
       <Title lv="1">{comp.title}</Title>
       <Title id="about">{ref.about}</Title>
+
       <div>{comp.about}</div>
       <Title id="demo">{ref.demo}</Title>
       <DemoComponent componentName={comp.title} />
