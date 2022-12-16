@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
-
+/**
+ * type
+ */
 interface MobileNavigationProps {
   handler: (value: boolean) => void;
   sidebar: boolean;
 }
+/**
+ * styled
+ */
 const MobileNavigationContainer = styled.div`
   position: fixed;
   top: 0;
@@ -21,6 +26,9 @@ const SidebarOpenButton = styled.button`
   font-size: 30px;
   padding: 10px;
 `;
+/**
+ * Component
+ */
 export function MobileNavigation({ handler, sidebar }: MobileNavigationProps) {
   return (
     <MobileNavigationContainer>

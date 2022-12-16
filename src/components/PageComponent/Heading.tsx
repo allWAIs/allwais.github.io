@@ -1,7 +1,14 @@
+/**
+ * type
+ */
 interface HeadingProps {
   children: JSX.Element[] | JSX.Element | string;
   category: string;
 }
+
+/**
+ * component
+ */
 export function Heading({ children, category }: HeadingProps) {
   return (
     <>

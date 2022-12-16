@@ -1,10 +1,16 @@
 import { Heading, ComponentPageLink } from '../PageComponent';
 import { data } from '../../pages';
+
+/**
+ * type
+ */
 interface IComponentPageNavigationProps {
   pathname: string;
   keyword?: string;
 }
-
+/**
+ * Component
+ */
 export function ComponentPageNavigation({
   pathname,
   keyword,

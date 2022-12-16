@@ -13,7 +13,7 @@ const LinkContainer = styled.div`
 
 export interface LinkProps {
   to: string;
-  children?: string;
+  children?: string | JSX.Element;
   pathname?: string;
 }
 

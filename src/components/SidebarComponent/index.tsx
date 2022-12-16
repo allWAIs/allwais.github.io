@@ -1,18 +1,10 @@
 import styled from '@emotion/styled';
-import { useContext } from 'react';
-import { ContextStore } from '../../store/index';
-import { ReactComponent as ToggleTheme } from '../../theme.svg';
+import { LanguageChanger } from './LanguageChanger';
+import { ThemeChanger } from './ThemeChanger';
 interface NavigationContainerProps {
   children: string | JSX.Element[] | JSX.Element;
 }
-interface SetLocalStorageProps {
-  value: string;
-}
-const StyledButton = styled(ToggleTheme)`
-  width: 25px;
-  height: 25px;
-  fill: var(--font-color);
-`;
+
 const StyledChildren = styled.div`
   @media screen and (max-width: 900px) {
     display: none;
@@ -40,29 +32,6 @@ export const Navigation = styled.div`
   }
 `;
 
-function LanguageChanger() {
-  const { lang, setLang } = useContext(ContextStore);
-
-  const handleChange = ({ value }: SetLocalStorageProps) => {
-    localStorage.setItem('lang', value);
-    setLang(value);
-  };
-  return (
-    <select value={lang} onChange={({ target }) => handleChange(target)}>
-      <option value="english">english</option>
-      <option value="korean">한국어</option>
-    </select>
-  );
-}
-
-function ThemeChanger() {
-  const { theme, setTheme } = useContext(ContextStore);
-
-  const handleChange = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-  return <StyledButton onClick={() => handleChange()} />;
-}
 export function Sidebar({ children }: NavigationContainerProps) {
   return (
     <Navigation>

@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
-
+/**
+ * type
+ */
 interface ContentsContainerProps {
   children: string | JSX.Element | JSX.Element[];
 }
+/**
+ * styled
+ */
 const ContentContainer = styled.div`
   position: relative;
   width: 100%;
@@ -30,6 +35,9 @@ const ComponentContainer = styled.div`
     margin-left: 0;
   }
 `;
+/**
+ * component
+ */
 export function ContentsContainer({ children }: ContentsContainerProps) {
   return (
     <ContentContainer>

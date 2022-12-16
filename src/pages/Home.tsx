@@ -1,11 +1,13 @@
+import { Title } from 'react-wai';
 import { ContentsContainer } from '../components/PageComponent/ComponentContainer';
 import { Sidebar } from '../components';
+
 export function Home() {
   return (
     <>
       <ContentsContainer>
-        <h1>Why React WAI</h1>
-        <h2>Motivation</h2>
+        <Title lv="1">Why React WAI</Title>
+        <Title>Motivation</Title>
         <div>
           The Web and Internet in whole is an increasingly important resource in
           many aspects of our life which includes: education, employment,

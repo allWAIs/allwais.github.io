@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-import { ContextStore } from '../store';
+import { Title } from 'react-wai';
 import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { data } from './Component.language';
+import { ContextStore } from '../store';
 import { Sidebar, ContentsContainer, DemoComponent } from '../components';
 const PropsIntro = styled.div`
   background-color: var(--editor-background-color);
@@ -20,16 +21,16 @@ export function Component() {
 
   return (
     <ContentsContainer>
-      <h1>{comp.title}</h1>
-      <h2 id="about">{ref.about}</h2>
+      <Title lv="1">{comp.title}</Title>
+      <Title id="about">{ref.about}</Title>
       <div>{comp.about}</div>
-      <h2 id="a11y">{ref.demo}</h2>
+      <Title id="demo">{ref.demo}</Title>
       <DemoComponent componentName={comp.title} />
-      <h2 id="a11y">{ref.a11y}</h2>
+      <Title id="a11y">{ref.a11y}</Title>
       <div>{comp.a11y}</div>
-      <h2 id="keyboard">{ref.keyboard}</h2>
+      <Title id="keyboard">{ref.keyboard}</Title>
       <div>{comp.keyboard}</div>
-      <h2 id="props">{ref.props}</h2>
+      <Title id="props">{ref.props}</Title>
       <PropsIntro>{comp.props}</PropsIntro>
 
       <Sidebar>

@@ -49,34 +49,26 @@ export function OpenIssue() {
   const text = data[lang];
   const sendIssue = async (title?: string, detail?: string) => {
     try {
-      if (typeof title !== undefined && typeof detail !== undefined) {
-        await octokit.rest.issues.create({
-          owner: 'allWAIs',
-          repo: 'allWAIs',
-          title: title + '',
-          body: detail || '',
-        });
-        redirect('/issue-complete');
-      }
+      if (typeof title == undefined || typeof detail == undefined) return;
+      await octokit.rest.issues.create({
+        owner: 'allWAIs',
+        repo: 'allWAIs',
+        title: title + '',
+        body: detail || '',
+      });
+      redirect('/issue-complete');
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <>
       <ContentsContainer>
         <Title lv="1">{text.title}</Title>
         <span>{text.desc}</span>
-        <IssueTitle
-          id="issuetitle"
-          ref={issueTitle}
-          placeholder={text.titleph}
-        ></IssueTitle>
-        <IssueComment
-          id="issuedetail"
-          ref={issueDetail}
-          placeholder={text.commentph}
-        ></IssueComment>
+        <IssueTitle ref={issueTitle} placeholder={text.titleph}></IssueTitle>
+        <IssueComment ref={issueDetail} placeholder={text.commentph} />
         <StyledButton
           onClick={() =>
             sendIssue(issueTitle?.current?.value, issueDetail?.current?.value)
@@ -86,11 +78,7 @@ export function OpenIssue() {
         </StyledButton>
       </ContentsContainer>
       <Sidebar>
-        <a
-          href="https://github.com/allWAIs/react-wai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/allWAIs/react-wai" target="_blank" rel="noopener noreferrer">
           {text.visit}
         </a>
       </Sidebar>

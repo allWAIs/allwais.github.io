@@ -1,19 +1,21 @@
 import styled from '@emotion/styled';
 import { useState, useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { StyledPageNavigation } from './StyledPageNavigation';
+import { useLocation } from 'react-router-dom';
 import { PageLink } from '../PageComponent/PageLink';
 import { Heading } from '../PageComponent/Heading';
 import { ReactComponent as Logo } from '../../logo.svg';
 import { MobileNavigation } from './MobileNavigation';
 import { ComponentPageNavigation } from './ComponentPageNavigation';
 import { ContextStore } from '../../store';
+/**
+ * styled
+ */
 const StyledLogo = styled(Logo)`
   width: 100px;
   height: 100px;
   stroke: var(--font-color);
 `;
-const CloseSidebar = styled.button`
+const StyledCloseSidebar = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
@@ -30,6 +32,28 @@ const Search = styled.input`
   border: none;
   border-bottom: 1px solid var(--font-color);
 `;
+const StyledPageNavigation = styled.div<{ sidebar: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100vh;
+  width: var(--sidebar-width);
+  padding: 10px 15px 50px 15px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 1;
+  background-color: var(--sidebar-color);
+  transition: 0.3s all;
+  @media screen and (max-width: 900px) {
+    transform: ${({ sidebar }) =>
+      sidebar ? 'translate3d(0, 0, 0)' : 'translate3d(-100%, 0, 0)'};
+  }
+`;
+
+/**
+ * Component
+ */
 export function PageNavigation() {
   const { sidebar, setSidebar, closeSidebar } = useContext(ContextStore);
   const { pathname } = useLocation();
@@ -39,10 +63,10 @@ export function PageNavigation() {
     <>
       <MobileNavigation sidebar={sidebar} handler={setSidebar} />
       <StyledPageNavigation sidebar={sidebar}>
-        <Link to="/">
+        <PageLink to="/">
           <StyledLogo />
-        </Link>
-        <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
+        </PageLink>
+        <StyledCloseSidebar onClick={closeSidebar}>⨉</StyledCloseSidebar>
         <Search
           placeholder="Search Component"
           onChange={({ target: { value } }) => setKeyword(value)}

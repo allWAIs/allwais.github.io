@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
-
+/**
+ * styled
+ */
 const ComponentText = styled.span`
   color: #2fc9b0;
 `;

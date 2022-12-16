@@ -11,7 +11,7 @@ export function Intro() {
     <>
       <ContentsContainer>
         <Title lv="1">{text.title}</Title>
-        <Title lv="2">{text.subtitle}</Title>
+        <Title>{text.subtitle}</Title>
         <div>{text.desc}</div>
         <Sidebar>Motivation</Sidebar>
       </ContentsContainer>
