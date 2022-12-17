@@ -5,7 +5,7 @@ import { pxCheck } from '../../store';
 /**
  * type
  */
-interface IPropsStringInput {
+interface PropsStringInput {
   name: string;
   handler: Dispatch<SetStateAction<string>>;
   init: string;
@@ -22,7 +22,7 @@ const StyledInput = styled.input`
 /**
  * component
  */
-export function PropsStringInput({ name, handler, init }: IPropsStringInput) {
+export function PropsEntryInput({ name, handler, init }: PropsStringInput) {
   const handleChange = (value: string) => {
     const numberAttribute = ['width', 'height'];
     if (numberAttribute.includes(name)) return handler(pxCheck(value));
@@ -34,7 +34,7 @@ export function PropsStringInput({ name, handler, init }: IPropsStringInput) {
 
       {name === 'children' ? null : (
         <>
-          &nbsp;&nbsp;<PropsText>{name}</PropsText>=
+          &nbsp;&nbsp;&nbsp;&nbsp;<PropsText>{name}</PropsText>:
         </>
       )}
       <BracketText>&#123;</BracketText>

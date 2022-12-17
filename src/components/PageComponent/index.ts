@@ -5,3 +5,5 @@ export * from './Heading';
 export * from './PageLink';
 export * from './PropsStringInput';
 export * from './PropsBooleanInput';
+export * from './PropsObjectInput';
+export * from './PropsEntryInput';

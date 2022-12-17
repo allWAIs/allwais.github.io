@@ -65,6 +65,30 @@ export const data: dataType = {
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
+    Breadcrumb: {
+      title: 'Breadcrumb',
+      about:
+        "A breadcrumb trail consists of a list of links to the parent pages of the current page in hierarchical order. It helps users find their place within a website or web application. Breadcrumbs are often placed horizontally before a page's main content.",
+      a11y: 'The set of links is structured using an ordered list .A nav element labeled Breadcrumb identifies the structure as a breadcrumb trail and makes it a navigation landmark so that it is easy to locate.',
+      keyboard: 'Not applicable',
+      props: `
+      src(string):
+      It determines Breadcrumb config address
+
+      root(string):
+      It determines Breadcrumb first path
+      
+      map(object):
+      It determines Breadcrumb path 
+      
+      width(string):
+      It determines Breadcrumb width
+      
+      splitter(string):
+      It determines Breadcrumb splitter    
+      `,
+      ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
+    },
     ref: {
       about: 'About this component',
       demo: 'Usage',
@@ -128,6 +152,30 @@ export const data: dataType = {
       컴포넌트의 텍스트 내용을 결정합니다.`,
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
+    },
+    Breadcrumb: {
+      title: 'Breadcrumb',
+      about:
+        'Breadcrumb trail은 현재 페이지의 상위 페이지에 대한 연결 목록을 계층 순서로 이루어져있습니다. 사용자가 웹 사이트 내에서 현재 위치를 찾을 수 있게 합니다. Breadcrumb는 페이지의 메인 컨텐츠 전에 수평으로 보통 배치됩니다.',
+      a11y: '링크들은 정렬된 목록으로 구성되어 있습니다. Breadcrumb라고 라벨된 네비게이션 요소는 구조를 breadcrumb trail로 식별하고, 원하는 주소로 쉽게 이동하기 위해 네비게이션 랜드마크를 생성합니다.',
+      keyboard: '없음',
+      props: `
+      src(string):
+      컴포넌트에 적용된 주소를 결정합니다.
+
+      root(string):
+      컴포넌트의 첫 번째 path를 결정합니다.
+      
+      map(object):
+      컴포넌트의 path 단어를 결정합니다.
+      
+      width(string):
+      컴포넌트의 너비를 결정합니다
+      
+      splitter(string):
+      path를 나누는 문자를 정합니다.    
+      `,
+      ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
     },
     ref: {
       about: '컴포넌트 특징',

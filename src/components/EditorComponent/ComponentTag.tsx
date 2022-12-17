@@ -4,8 +4,8 @@ import { TagText, ComponentText } from '../PageComponent';
  */
 interface ComponentTagProps {
   name: string;
-  status?: 'closed';
-  children?: string | JSX.Element[];
+  status?: 'closed' | 'self-closed';
+  children?: string | JSX.Element[] | JSX.Element;
 }
 /**
  * component
@@ -17,6 +17,7 @@ export function ComponentTag({ status, children, name }: ComponentTagProps) {
       <TagText>{status === 'closed' ? '/' : null}</TagText>
       <ComponentText>{name}</ComponentText>
       {children}
+      <TagText>{status === 'self-closed' ? '/' : null}</TagText>
       <TagText>&gt;</TagText>
     </>
   );
