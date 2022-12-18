@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { A11yHidden } from 'react-wai';
-import { PropsStringInput, PropsBooleanInput } from './../PageComponent';
+import { StringInput, PropsBooleanInput } from './../PageComponent';
 import { ComponentTag, DemoContainer } from './../EditorComponent';
 
 export function DemoA11yHidden() {
@@ -11,17 +11,18 @@ export function DemoA11yHidden() {
     <>
       <DemoContainer>
         <ComponentTag name="A11yHidden">
-          <PropsStringInput name="as" init={as} handler={setAs} />
+          <StringInput name="as" init={as} handler={setAs} n={2} />
           <PropsBooleanInput
             name="focusable"
             init={'false'}
             handler={setFocusable}
           />
         </ComponentTag>
-        <PropsStringInput
+        <StringInput
           name="children"
           init={'A11yHidden'}
           handler={setChildren}
+          n={2}
         />
         <br />
         <ComponentTag name="A11yHidden" status="closed" />

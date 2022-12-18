@@ -1,13 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
 import { PropsText, BracketText } from './ColorSelector';
-import { pxCheck } from '../../store';
 /**
  * type
  */
-interface PropsStringInput {
+interface IPropsBooleanInput {
   name: string;
-  handler: Dispatch<SetStateAction<string>>;
+  handler: Dispatch<SetStateAction<boolean>>;
   init: string;
 }
 /**
@@ -22,25 +21,20 @@ const StyledInput = styled.input`
 /**
  * component
  */
-export function PropsEntryInput({ name, handler, init }: PropsStringInput) {
-  const handleChange = (value: string) => {
-    const numberAttribute = ['width', 'height'];
-    if (numberAttribute.includes(name)) return handler(pxCheck(value));
-    else return handler(value);
-  };
+export function PropsBooleanInput({ name, handler, init }: IPropsBooleanInput) {
+  const handleChange = (value: boolean) => handler(value);
   return (
     <>
       <br />
-
       {name === 'children' ? null : (
         <>
-          &nbsp;&nbsp;&nbsp;&nbsp;<PropsText>{name}</PropsText>:
+          &nbsp;&nbsp;<PropsText>{name}</PropsText>=
         </>
       )}
       <BracketText>&#123;</BracketText>
       <StyledInput
         defaultValue={init}
-        onChange={({ target }) => handleChange(target.value)}
+        onChange={({ target }) => handleChange(!!target.value)}
       />
       <BracketText>&#125;</BracketText>
     </>

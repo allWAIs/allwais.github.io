@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Alert } from 'react-wai';
-import { PropsStringInput } from './../PageComponent';
+import { StringInput } from './../PageComponent';
 import { ComponentTag, DemoContainer } from './../EditorComponent';
 
 export function DemoAlert() {
@@ -11,13 +11,14 @@ export function DemoAlert() {
     <>
       <DemoContainer>
         <ComponentTag name="Alert">
-          <PropsStringInput name="width" init={'100%'} handler={setWidth} />
-          <PropsStringInput name="height" init={'50px'} handler={setHeight} />
+          <StringInput name="width" init={width} handler={setWidth} n={2} />
+          <StringInput name="height" init={height} handler={setHeight} n={2} />
         </ComponentTag>
-        <PropsStringInput
+        <StringInput
           name="children"
-          init={'Alert'}
+          init={children}
           handler={setChildren}
+          n={2}
         />
         <br />
         <ComponentTag name="Alert" status="closed" />

@@ -3,7 +3,7 @@ import { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PageLink } from '../PageComponent/PageLink';
 import { Heading } from '../PageComponent/Heading';
-import { ReactComponent as Logo } from '../../logo.svg';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { MobileNavigation } from './MobileNavigation';
 import { ComponentPageNavigation } from './ComponentPageNavigation';
 import { ContextStore } from '../../store';

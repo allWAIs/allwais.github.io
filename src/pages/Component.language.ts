@@ -29,7 +29,13 @@ export const data: dataType = {
       title: 'A11yHidden',
       about:
         'Sometimes it is necessary to hide elements in a web page. The conventional way is to use CSS (display:none; and visibility:hidden;) or the HTML5 `hidden` attribute. These properties hide elements not only on the screen, but also for screen reader users. Thus, these elements will not be visible nor vocalized by Assistive technologies (AT).',
-      a11y: 'A11yHidden allows an element to disappear from the screen, while being accessible to screen reader users. Ideally, it is best to combine all the solutions to make sure it is working properly in all browsers.',
+      a11y: `
+      To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+      NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
+      Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
+
+      To make the graphical representation of the state of a switch readily perceivable, two pixel borders are used for the switch state container and a solid color is used for the fill of the circles indicating the on and off states.
+      To ensure users can perceive the difference between the container and the circles used to indicate the state of the switch, there are two pixels of space between the container border and the circles.`,
       keyboard: 'Not applicable',
       props: `
       as(string):
@@ -44,27 +50,7 @@ export const data: dataType = {
 
       ref: 'https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/',
     },
-    Title: {
-      title: 'Title',
-      about:
-        'Navigating through the <h1> and <h2> give a user an overview of a page and how its content is structured. The <h3> through <h6> elements provide a quick understanding of the details in each section.',
-      a11y: 'Heading tags should be in order. That means an <h1> is followed by an <h2>, an <h2> is followed by a <h2> or <h3> and so on. It is ok to skip heading levels when going up in order (ex. <h4> to <h1>).',
-      keyboard: 'Not applicable',
-      props: `
-      lv(string|number):
-      It determines Heading tag level
 
-      hidden(string):
-      It determines accessible hidden
-
-      focusable(string):
-      It determines Component focusable
-
-      children(string):
-      It determines title text`,
-
-      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
-    },
     Breadcrumb: {
       title: 'Breadcrumb',
       about:
@@ -88,6 +74,70 @@ export const data: dataType = {
       It determines Breadcrumb splitter    
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
+    },
+    Switch: {
+      title: 'Switch',
+      about: `스위치는 사용자가 on 또는 off의 두 가지 값 중 하나를 선택할 수 있는 입력 위젯입니다. 스위치는 이진 입력의 역할을 하는 체크 박스 및 토글 버튼과 유사합니다. 그러나 한 가지 차이점은 스위치는 이진 입력에만 사용할 수 있지만, 체크박스와 토글 버튼은 중간 상태를 지원하는 옵션을 허용됩니다.체크 박스와 토글 버튼은 선택하거나 선택하지 않을 수 있으며 선택적으로 부분 선택 상태를 허용할 수도 있습니다.`,
+      a11y: `시각적 또는 인지적으로 불편한 유저가 스위치 상태를 더 쉽게 이해할 수 있도록 상태(ON 또는 OFF)에 해당하는 텍스트가 그래픽 상태 옆에 표시된다. CSS 속성 선택기는 표시된 레이블이 아리아 체크 속성의 값과 동기화되는지 확인합니다.
+      참고: 화면 판독기에 의한 상태의 중복 알림을 방지하기 위해 상태 표시기는 아리아가 숨겨진 보조 기술로부터 숨겨집니다.
+      브라우저 또는 운영 체제의 고대비 설정이 활성화된 경우를 포함하여 시각적으로 불편한 사람이 그래픽 상태를 볼 수 있고 식별할 수 있도록 하려면 간격, 테두리 너비 및 채우기가 중요합니다.
+      
+      스위치 상태의 그래픽 표현을 쉽게 인식할 수 있도록 스위치 상태 컨테이너에는 두 개의 픽셀 경계가 사용되고 On/Off 상태를 나타내는 원의 채우기에는 단색이 사용됩니다.
+      사용자가 용기와 스위치 상태를 표시하는 데 사용되는 원 사이의 차이를 인식할 수 있도록 용기 테두리와 원 사이에 두 픽셀의 공간이 있습니다.
+        `,
+      keyboard: `
+      Tab : 스위치로 포커스시킵니다..
+      Space | Enter :	스위치를 on, off 토글시킵니다.`,
+      props: `
+      delay(string):
+      On Off 애니메이션 시간을 결정합니다.
+
+      height(string):
+      컴포넌트의 높이를 결정합니다.
+      
+      ratio(string):
+      컴포넌트의 좌우 비율을 결정합니다.
+
+      text(string):
+      스위치 on 일 때 텍스트를 결정합니다.
+
+      bg(string):
+      on일 때 배경을 결정합니다.
+
+      border(string):
+      테두리를 결정합니다.
+
+      offText(string):
+      스위치 off 일 때 텍스트를 결정합니다.
+
+      offBg(string):
+      off일 때 배경을 결정합니다.
+
+      offBorder(string):
+      스위치가 꺼졌을 때 테두리 색을 결정합니다.
+      `,
+      ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
+    },
+    Title: {
+      title: 'Title',
+      about:
+        'Navigating through the <h1> and <h2> give a user an overview of a page and how its content is structured. The <h3> through <h6> elements provide a quick understanding of the details in each section.',
+      a11y: 'Heading tags should be in order. That means an <h1> is followed by an <h2>, an <h2> is followed by a <h2> or <h3> and so on. It is ok to skip heading levels when going up in order (ex. <h4> to <h1>).',
+      keyboard: 'Not applicable',
+      props: `
+      lv(string|number):
+      It determines Heading tag level
+
+      hidden(string):
+      It determines accessible hidden
+
+      focusable(string):
+      It determines Component focusable
+
+      children(string):
+      It determines title text`,
+
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
     ref: {
       about: 'About this component',
@@ -132,27 +182,7 @@ export const data: dataType = {
 
       ref: 'https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/',
     },
-    Title: {
-      title: 'Title',
-      about:
-        '<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.',
-      a11y: '제목 태그는 순서대로 배치되어야만 한다. 즉, <h1> 뒤에 <h2>, <h2> 뒤에 <h2> 또는 <h3> 등이 뒤따른다는 것이다. 순서대로 올라갈 때 헤딩 레벨을 건너뛰어도 괜찮습니다(예: <h4>에서 <h1>).',
-      keyboard: '없음',
-      props: `    
-      lv(string|number):
-      타이틀의 태그 레벨을 결정합니다.
 
-      hidden(string):
-      컴포넌트의 A11yHidden을 결정합니다.
-
-      focusable(string):
-      컴포넌트의 포커스 가능함을 결정합니다.
-
-      children(string):
-      컴포넌트의 텍스트 내용을 결정합니다.`,
-
-      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
-    },
     Breadcrumb: {
       title: 'Breadcrumb',
       about:
@@ -176,6 +206,70 @@ export const data: dataType = {
       path를 나누는 문자를 정합니다.    
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
+    },
+    Switch: {
+      title: 'Switch',
+      about: `To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+      NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
+      Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
+      To enhance perceivability when operating the switches, visual keyboard focus and hover are styled using the CSS :hover and :focus pseudo-classes:`,
+      a11y: `A switch is an input widget that allows users to choose one of two values: on or off. Switches are similar to checkboxes and toggle buttons, which can also serve as binary inputs. One difference, however, is that switches can only be used for binary input while checkboxes and toggle buttons allow implementations the option of supporting a third middle state. Checkboxes can be checked or not checked and can optionally also allow for a partially checked state. Toggle buttons can be pressed or not pressed and can optionally allow for a partially pressed state.
+        Since switch, checkbox, and toggle button all offer binary input, they are often functionally interchangeable. Choose the role that best matches both the visual design and semantics of the user interface. For instance, there are some circumstances where the semantics of on or off would be easier for assistive technology users to understand than the semantics of checked or unchecked, and vice versa. Consider a widget for turning lights on or off. In this case, screen reader output of Lights switch on is more user friendly than Lights checkbox checked. However, if the same input were in a group of inputs labeled Which of the following must be included in your pre-takeoff procedures?, Lights checkbox checked would make more sense.
+        Important: it is critical the label on a switch does not change when its state changes.
+        `,
+      keyboard: `
+      Tab : Moves keyboard focus to the switch.
+      Space | Enter :	Toggle switch between on and off.`,
+      props: `
+      delay(string):
+      It determines transition delay.
+
+      height(string):
+      It determines Component(bar, ball, component) height.
+      
+      ratio(string):
+      It determines Component aspect ratio.
+
+      text(string):
+      It determines switch on text.
+
+      bg(string):
+      It determines switch on background.
+
+      border(string):
+      It determines switch on border.
+
+      offText(string):
+      It determines switch off text.
+
+      offBg(string):
+      It determines switch off background.
+
+      offBorder(string):
+      It determines switch off border.
+      `,
+      ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
+    },
+    Title: {
+      title: 'Title',
+      about:
+        '<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.',
+      a11y: '제목 태그는 순서대로 배치되어야만 한다. 즉, <h1> 뒤에 <h2>, <h2> 뒤에 <h2> 또는 <h3> 등이 뒤따른다는 것이다. 순서대로 올라갈 때 헤딩 레벨을 건너뛰어도 괜찮습니다(예: <h4>에서 <h1>).',
+      keyboard: '없음',
+      props: `    
+      lv(string|number):
+      타이틀의 태그 레벨을 결정합니다.
+
+      hidden(string):
+      컴포넌트의 A11yHidden을 결정합니다.
+
+      focusable(string):
+      컴포넌트의 포커스 가능함을 결정합니다.
+
+      children(string):
+      컴포넌트의 텍스트 내용을 결정합니다.`,
+
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
     ref: {
       about: '컴포넌트 특징',

@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Title } from 'react-wai';
 import { Breadcrumb } from 'react-wai';
-import {
-  PropsStringInput,
-  PropsObjectInput,
-  PropsEntryInput,
-} from './../PageComponent';
+import { StringInput, ObjectInput, EntryInput } from './../PageComponent';
 import { ComponentTag, DemoContainer } from './../EditorComponent';
 
 function BasicUsage() {
@@ -38,30 +34,34 @@ function UsageBredcrumb() {
     <>
       <DemoContainer>
         <ComponentTag name="Breadcrumb">
-          <PropsStringInput name="root" init={defaultRoot} handler={setRoot} />
-          <PropsStringInput name="width" init={width} handler={setWidth} />
-          <PropsStringInput
+          <StringInput name="root" init={defaultRoot} handler={setRoot} n={2} />
+          <StringInput name="width" init={width} handler={setWidth} n={2} />
+          <StringInput
             name="Splitter"
             init={splitter}
             handler={setSplitter}
+            n={2}
           />
-          <PropsObjectInput name="map">
-            <PropsEntryInput
+          <ObjectInput name="map" n={2}>
+            <EntryInput
               name={defaultRoot}
               init="allWAIs Home"
+              n={4}
               handler={(value) => setMap({ ...map, defaultRoot: value })}
             />
-            <PropsEntryInput
+            <EntryInput
               name="Components"
               init=""
+              n={4}
               handler={(value) => setMap({ ...map, Components: value })}
             />
-            <PropsEntryInput
+            <EntryInput
               name="Breadcrumb"
               init="Bread"
+              n={4}
               handler={(value) => setMap({ ...map, Breadcrumb: value })}
             />
-          </PropsObjectInput>
+          </ObjectInput>
         </ComponentTag>
 
         <br />

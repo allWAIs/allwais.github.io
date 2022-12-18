@@ -2,13 +2,15 @@ import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
 import { PropsText, BracketText } from './ColorSelector';
 import { pxCheck } from '../../store';
+import { Indent } from './Indent';
 /**
  * type
  */
-interface IPropsStringInput {
+interface StringInput {
   name: string;
   handler: Dispatch<SetStateAction<string>>;
   init: string;
+  n?: number;
 }
 /**
  * styled
@@ -22,24 +24,24 @@ const StyledInput = styled.input`
 /**
  * component
  */
-export function PropsStringInput({ name, handler, init }: IPropsStringInput) {
+export function StringInput({ ...props }: StringInput) {
   const handleChange = (value: string) => {
     const numberAttribute = ['width', 'height'];
-    if (numberAttribute.includes(name)) return handler(pxCheck(value));
-    else return handler(value);
+    if (!numberAttribute.includes(props.name)) return props.handler(value);
+    return props.handler(pxCheck(value));
   };
   return (
     <>
       <br />
-
-      {name === 'children' ? null : (
+      <Indent n={props.n} />
+      {props.name === 'children' ? null : (
         <>
-          &nbsp;&nbsp;<PropsText>{name}</PropsText>=
+          <PropsText>{props.name}</PropsText>=
         </>
       )}
       <BracketText>&#123;</BracketText>
       <StyledInput
-        defaultValue={init}
+        defaultValue={props.init}
         onChange={({ target }) => handleChange(target.value)}
       />
       <BracketText>&#125;</BracketText>

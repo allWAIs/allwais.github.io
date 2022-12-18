@@ -1,11 +1,12 @@
 import { PropsText, BracketText } from './ColorSelector';
-
+import { Indent } from './Indent';
 /**
  * type
  */
-interface PropsObjectInput {
+interface ObjectInput {
   name: string;
   children: string | JSX.Element | JSX.Element[];
+  n?: number;
 }
 /**
  * styled
@@ -14,13 +15,14 @@ interface PropsObjectInput {
 /**
  * component
  */
-export function PropsObjectInput({ name, children }: PropsObjectInput) {
+export function ObjectInput({ name, children, n }: ObjectInput) {
   return (
     <>
       <br />
+      <Indent n={n} />
       {name === 'children' ? null : (
         <>
-          &nbsp;&nbsp;<PropsText>{name}</PropsText>=
+          <PropsText>{name}</PropsText>=
         </>
       )}
       <BracketText>&#123;</BracketText>

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { ContextStore } from '../../store/index';
-import { ReactComponent as ToggleTheme } from '../../theme.svg';
+import { ReactComponent as ToggleTheme } from '../../assets/theme.svg';
+
 const StyledButton = styled(ToggleTheme)`
   width: 25px;
   height: 25px;

@@ -13,6 +13,9 @@ interface defaultStateProps {
   setSidebar: React.Dispatch<React.SetStateAction<boolean>>;
   closeSidebar: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
 }
+const setProperty = (key: string, value: string) =>
+  document.documentElement.style.setProperty(key, value);
+
 const getDefaultLocalSotrage = (field: string, defaultValue: string) => {
   return (
     localStorage.getItem(field) ??
@@ -32,14 +35,16 @@ const defaultState: defaultStateProps = {
 };
 const setThemeProperty = (theme: string) => {
   if (theme === 'dark') {
-    document.documentElement.style.setProperty('--font-color', 'white');
-    document.documentElement.style.setProperty('--background-color', 'black');
-    document.documentElement.style.setProperty('--sidebar-color', 'black');
+    setProperty('--font-color', 'white');
+    setProperty('--background-color', 'black');
+    setProperty('--sidebar-color', 'black');
+    setProperty('--actvie-link-container', 'white');
   }
   if (theme === 'light') {
-    document.documentElement.style.setProperty('--font-color', 'black');
-    document.documentElement.style.setProperty('--background-color', 'white');
-    document.documentElement.style.setProperty('--sidebar-color', '#ebebeb');
+    setProperty('--font-color', 'black');
+    setProperty('--background-color', 'white');
+    setProperty('--sidebar-color', '#ebebeb');
+    setProperty('--actvie-link-container', 'black');
   }
 };
 export const ContextStore = createContext(defaultState);
