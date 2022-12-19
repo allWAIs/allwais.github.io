@@ -12,7 +12,7 @@ import { data } from './A11yHidden.lang';
 export function DemoA11yHidden() {
   const { lang } = useContext(ContextStore);
 
-  const [as, setAs] = useState<ElementType<any> & string>('span');
+  const [as, setAs] = useState<ElementType & string>('span');
   const [focusable, setFocusable] = useState(false);
   const [children, setChildren] = useState('Alert');
   return (
@@ -24,6 +24,7 @@ export function DemoA11yHidden() {
             name="focusable"
             init={focusable}
             handler={setFocusable}
+            n={2}
           />
         </ComponentTag>
         <StringInput

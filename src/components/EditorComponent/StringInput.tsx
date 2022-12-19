@@ -14,7 +14,7 @@ interface StringInput {
 }
 interface TagInput {
   name: string;
-  handler: Dispatch<SetStateAction<ElementType<any> & string>>;
+  handler: Dispatch<SetStateAction<ElementType & string>>;
   init: string;
   n?: number;
 }
