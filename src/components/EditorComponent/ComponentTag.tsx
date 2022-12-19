@@ -7,7 +7,7 @@ import {
   FuncName,
   ConstText,
   Indent,
-} from '../PageComponent';
+} from '../EditorComponent';
 /**
  * type
  */

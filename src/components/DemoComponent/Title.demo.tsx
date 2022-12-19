@@ -1,12 +1,37 @@
 import { useState } from 'react';
 import { Title } from 'react-wai';
-import { StringInput, PropsBooleanInput } from './../PageComponent';
-import { ComponentTag, DemoContainer } from './../EditorComponent';
+import {
+  ComponentTag,
+  Demo,
+  StringInput,
+  BooleanInput,
+  StyleInput,
+} from './../EditorComponent';
 
 type typeLv = 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
-
-export function DemoTitle() {
+export function BasicUsage() {
+  const [children, setChildren] = useState('TIIIIIITLE');
+  return (
+    <>
+      <Demo>
+        <ComponentTag name="Title"></ComponentTag>
+        <StringInput
+          name="children"
+          init={children}
+          handler={setChildren}
+          n={2}
+        />
+        <br />
+        <ComponentTag name="Title" status="closed" />
+      </Demo>
+      <Title lv="3">Basic Usage Component</Title>
+      <Title>{children}</Title>
+    </>
+  );
+}
+export function Usage1() {
   const [lv, setLv] = useState('2');
+  const [color, setColor] = useState('blue');
   const [hidden, setHidden] = useState('false');
   const [focusable, setFocusable] = useState(false);
   const [children, setChildren] = useState('This is title');
@@ -18,13 +43,14 @@ export function DemoTitle() {
   };
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <ComponentTag name="Title">
           <StringInput name="lv" init={lv} handler={setLv} n={2} />
-          <StringInput name="hidden" init={'false'} handler={setHidden} n={2} />
-          <PropsBooleanInput
+          <StringInput name="hidden" init={hidden} handler={setHidden} n={2} />
+          <StyleInput name="color" init={color} handler={setColor} n={2} />
+          <BooleanInput
             name="focusable"
-            init={'false'}
+            init={focusable}
             handler={setFocusable}
           />
         </ComponentTag>
@@ -36,14 +62,26 @@ export function DemoTitle() {
         />
         <br />
         <ComponentTag name="Title" status="closed" />
-      </DemoContainer>
+      </Demo>
       <Title
         lv={lvCheck(lv)}
         hidden={hidden === 'false' ? false : true}
         focusable={focusable}
+        style={{ color }}
       >
         {children}
       </Title>
+    </>
+  );
+}
+export function DemoTitle() {
+  return (
+    <>
+      <Title lv="3">Basic Usage</Title>
+      <BasicUsage />
+
+      <Title lv="3">Usage1</Title>
+      <Usage1 />
     </>
   );
 }

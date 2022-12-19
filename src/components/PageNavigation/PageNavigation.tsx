@@ -15,14 +15,14 @@ const StyledLogo = styled(Logo)`
   height: 100px;
   stroke: var(--font-color);
 `;
-const StyledCloseSidebar = styled.button`
+const CloseSidebar = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  border: 0;
+  border: none;
   background: none;
   display: none;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     display: block;
   }
 `;
@@ -40,12 +40,12 @@ const StyledPageNavigation = styled.div<{ sidebar: boolean }>`
   width: var(--sidebar-width);
   padding: 10px 15px 50px 15px;
   box-sizing: border-box;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: fixed;
   z-index: 1;
   background-color: var(--sidebar-color);
   transition: 0.3s all;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     transform: ${({ sidebar }) =>
       sidebar ? 'translate3d(0, 0, 0)' : 'translate3d(-100%, 0, 0)'};
   }
@@ -66,7 +66,7 @@ export function PageNavigation() {
         <PageLink to="/">
           <StyledLogo />
         </PageLink>
-        <StyledCloseSidebar onClick={closeSidebar}>⨉</StyledCloseSidebar>
+        <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
         <Search
           placeholder="Search Component"
           onChange={({ target: { value } }) => setKeyword(value)}

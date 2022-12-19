@@ -1,3 +1,5 @@
+import { ReactComponent as Hamburger } from '../../assets/hamburger.svg';
+
 import styled from '@emotion/styled';
 /**
  * type
@@ -16,15 +18,19 @@ const MobileNavigationContainer = styled.div`
   z-index: 1;
   display: none;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     display: block;
   }
 `;
-const SidebarOpenButton = styled.button`
+const SidebarOpenButton = styled(Hamburger)`
   border: 0;
   background: none;
   font-size: 30px;
   padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--font-color);
+  fill: var(--font-color);
 `;
 /**
  * Component
@@ -32,7 +38,7 @@ const SidebarOpenButton = styled.button`
 export function MobileNavigation({ handler, sidebar }: MobileNavigationProps) {
   return (
     <MobileNavigationContainer>
-      <SidebarOpenButton onClick={() => handler(!sidebar)}>☰</SidebarOpenButton>
+      <SidebarOpenButton onClick={() => handler(!sidebar)}></SidebarOpenButton>
     </MobileNavigationContainer>
   );
 }

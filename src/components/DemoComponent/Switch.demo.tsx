@@ -1,13 +1,21 @@
 import { useState } from 'react';
 import { Title, Switch } from 'react-wai';
-import { Import, Func, StringInput, Indent } from './../PageComponent';
-import { ComponentTag, DemoContainer } from './../EditorComponent';
+
+import {
+  ComponentTag,
+  Demo,
+  Func,
+  StringInput,
+  BooleanInput,
+  Indent,
+  Import,
+} from './../EditorComponent';
 
 function BasicUsage() {
   const [state, setState] = useState(false);
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <Import name="useState" origin="react" />
         <br />
         <Func name="ToggleComponent" n={2}>
@@ -20,8 +28,8 @@ function BasicUsage() {
           />
           <br />
         </Func>
-      </DemoContainer>
-      <Switch status={state} event={() => setState(!state)} />
+      </Demo>
+      <Switch status={state} onClick={() => setState(!state)} />
     </>
   );
 }
@@ -30,6 +38,7 @@ function Usage1() {
   const [height, setHeight] = useState('30px');
   const [delay, setDelay] = useState('0.5');
   const [ratio, setRatio] = useState('2');
+  const [a11yHidden, setA11yHidden] = useState(false);
   const [text, setText] = useState('dark');
   const [bg, setBg] = useState('white');
   const [border, setBorder] = useState('black');
@@ -43,9 +52,10 @@ function Usage1() {
     '90% 30%/30% no-repeat url(https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/svg/sun.svg)'
   );
   const [children, setChildren] = useState('darkMode');
+
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <Import name="useState" origin="react" />
         <br />
         <Func name="DarkMode" n={2}>
@@ -57,40 +67,66 @@ function Usage1() {
             status="spread"
             n={2}
             n2={6}
-          />
-          <StringInput name="delay" init={delay} handler={setDelay} n={6} />
-          <StringInput name="height" init={height} handler={setHeight} n={6} />
-          <StringInput name="ratio" init={ratio} handler={setRatio} n={6} />
-          <StringInput name="text" init={text} handler={setText} n={6} />
-          <StringInput name="bg" init={bg} handler={setBg} n={6} />
-          <StringInput name="border" init={border} handler={setBorder} n={6} />
-          <StringInput name="bar" init={bar} handler={setBar} n={6} />
+          >
+            <BooleanInput
+              name="a11yHidden"
+              init={a11yHidden}
+              handler={setA11yHidden}
+              n={6}
+            />
+            <StringInput name="delay" init={delay} handler={setDelay} n={6} />
+            <StringInput
+              name="height"
+              init={height}
+              handler={setHeight}
+              n={6}
+            />
+            <StringInput name="ratio" init={ratio} handler={setRatio} n={6} />
+            <StringInput name="text" init={text} handler={setText} n={6} />
+            <StringInput name="bg" init={bg} handler={setBg} n={6} />
+            <StringInput
+              name="border"
+              init={border}
+              handler={setBorder}
+              n={6}
+            />
+            <StringInput name="bar" init={bar} handler={setBar} n={6} />
+            <StringInput
+              name="offText"
+              init={offText}
+              handler={setOffText}
+              n={6}
+            />
+            <StringInput name="offBg" init={offBg} handler={setOffBg} n={6} />
+            <StringInput
+              name="offBorder"
+              init={offBorder}
+              handler={setOffBorder}
+              n={6}
+            />
+            <StringInput
+              name="offBar"
+              init={offBar}
+              handler={setOffBar}
+              n={6}
+            />
+            <br />
+            <Indent n={4} />
+          </ComponentTag>
+
           <StringInput
-            name="offText"
-            init={offText}
-            handler={setOffText}
+            name="children"
+            init={children}
+            handler={setChildren}
             n={6}
           />
-          <StringInput name="offBg" init={offBg} handler={setOffBg} n={6} />
-          <StringInput
-            name="offBorder"
-            init={offBorder}
-            handler={setOffBorder}
-            n={6}
-          />
-          <StringInput name="offBar" init={offBar} handler={setOffBar} n={6} />
           <br />
           <ComponentTag name="Switch" status="closed" n={4} />
           <br />
         </Func>
-        <StringInput
-          name="children"
-          init={children}
-          handler={setChildren}
-          n={2}
-        />
-      </DemoContainer>
+      </Demo>
       <Switch
+        a11yHidden={a11yHidden}
         height={height}
         ratio={ratio}
         text={text}
@@ -103,7 +139,7 @@ function Usage1() {
         offBg={offBg}
         offBorder={offBorder}
         offBar={offBar}
-        event={() => setState(!state)}
+        onClick={() => setState(!state)}
       >
         {children}
       </Switch>

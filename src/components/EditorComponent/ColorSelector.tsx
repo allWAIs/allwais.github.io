@@ -84,6 +84,7 @@ export {
   BracketText2,
   TagText,
   ConstText,
+  ImportText,
   Import,
   Func,
   FuncName,

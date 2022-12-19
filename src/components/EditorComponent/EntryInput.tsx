@@ -6,7 +6,7 @@ import { pxCheck } from '../../store';
 /**
  * type
  */
-interface StringInput {
+interface EntryInput {
   name: string;
   handler: Dispatch<SetStateAction<string>>;
   init: string;
@@ -20,11 +20,14 @@ const StyledInput = styled.input`
   text-align: center;
   background-color: var(--editor-background-color);
   color: var(--editor-font-color);
+  @media screen and (max-width: 10500px) {
+    width: 150px;
+  }
 `;
 /**
  * component
  */
-export function EntryInput({ name, handler, init, n }: StringInput) {
+export function EntryInput({ name, handler, init, n }: EntryInput) {
   const handleChange = (value: string) => {
     const numberAttribute = ['width', 'height'];
     if (numberAttribute.includes(name)) return handler(pxCheck(value));

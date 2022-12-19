@@ -1,13 +1,15 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
+import { Indent } from './Indent';
 import { PropsText, BracketText } from './ColorSelector';
 /**
  * type
  */
-interface IPropsBooleanInput {
+interface BooleanInput {
   name: string;
   handler: Dispatch<SetStateAction<boolean>>;
-  init: string;
+  init: boolean;
+  n?: number;
 }
 /**
  * styled
@@ -17,23 +19,27 @@ const StyledInput = styled.input`
   text-align: center;
   background-color: var(--editor-background-color);
   color: var(--editor-font-color);
+  @media screen and (max-width: 1050px) {
+    width: 150px;
+  }
 `;
 /**
  * component
  */
-export function PropsBooleanInput({ name, handler, init }: IPropsBooleanInput) {
+export function BooleanInput({ name, handler, init, n }: BooleanInput) {
   const handleChange = (value: boolean) => handler(value);
   return (
     <>
       <br />
       {name === 'children' ? null : (
         <>
-          &nbsp;&nbsp;<PropsText>{name}</PropsText>=
+          <Indent n={n} />
+          <PropsText>{name}</PropsText>=
         </>
       )}
       <BracketText>&#123;</BracketText>
       <StyledInput
-        defaultValue={init}
+        defaultValue={String(init)}
         onChange={({ target }) => handleChange(!!target.value)}
       />
       <BracketText>&#125;</BracketText>

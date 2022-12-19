@@ -1,20 +1,28 @@
-import { useState } from 'react';
+import { useState, useContext, ElementType } from 'react';
 import { A11yHidden } from 'react-wai';
-import { StringInput, PropsBooleanInput } from './../PageComponent';
-import { ComponentTag, DemoContainer } from './../EditorComponent';
-
+import { ContextStore } from '../../store';
+import {
+  ComponentTag,
+  Demo,
+  StringInput,
+  BooleanInput,
+  TagInput,
+} from './../EditorComponent';
+import { data } from './A11yHidden.lang';
 export function DemoA11yHidden() {
-  const [as, setAs] = useState('span');
+  const { lang } = useContext(ContextStore);
+
+  const [as, setAs] = useState<ElementType<any> & string>('span');
   const [focusable, setFocusable] = useState(false);
   const [children, setChildren] = useState('Alert');
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <ComponentTag name="A11yHidden">
-          <StringInput name="as" init={as} handler={setAs} n={2} />
-          <PropsBooleanInput
+          <TagInput name="as" init={as} handler={setAs} n={2} />
+          <BooleanInput
             name="focusable"
-            init={'false'}
+            init={focusable}
             handler={setFocusable}
           />
         </ComponentTag>
@@ -26,7 +34,8 @@ export function DemoA11yHidden() {
         />
         <br />
         <ComponentTag name="A11yHidden" status="closed" />
-      </DemoContainer>
+      </Demo>
+      {data[lang]}
       <A11yHidden as={as} focusable={Boolean(focusable)}>
         {children}
       </A11yHidden>

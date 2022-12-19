@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Title } from 'react-wai';
 import { Breadcrumb } from 'react-wai';
-import { StringInput, ObjectInput, EntryInput } from './../PageComponent';
-import { ComponentTag, DemoContainer } from './../EditorComponent';
+import {
+  ComponentTag,
+  Demo,
+  StringInput,
+  ObjectInput,
+  EntryInput,
+} from './../EditorComponent';
 
 function BasicUsage() {
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <ComponentTag name="Breadcrumb" status="self-closed" />
-      </DemoContainer>
+      </Demo>
       <Breadcrumb />
     </>
   );
@@ -32,7 +37,7 @@ function UsageBredcrumb() {
   );
   return (
     <>
-      <DemoContainer>
+      <Demo>
         <ComponentTag name="Breadcrumb">
           <StringInput name="root" init={defaultRoot} handler={setRoot} n={2} />
           <StringInput name="width" init={width} handler={setWidth} n={2} />
@@ -66,7 +71,7 @@ function UsageBredcrumb() {
 
         <br />
         <ComponentTag name="Breadcrumb" status="closed" />
-      </DemoContainer>
+      </Demo>
       <Breadcrumb root={root} map={map} width={width} splitter={splitter} />
     </>
   );

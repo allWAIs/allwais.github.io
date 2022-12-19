@@ -13,7 +13,7 @@ const ContentContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
 `;
@@ -30,7 +30,7 @@ const ComponentContainer = styled.div`
   height: fit-content;
   width: 100%;
   box-sizing: border-box;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     margin-right: 0;
     margin-left: 0;
   }

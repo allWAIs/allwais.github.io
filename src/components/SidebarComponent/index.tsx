@@ -6,11 +6,15 @@ interface NavigationContainerProps {
 }
 
 const StyledChildren = styled.div`
-  @media screen and (max-width: 900px) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media screen and (max-width: 1050px) {
     display: none;
   }
 `;
 export const Navigation = styled.div`
+  font-size: 80%;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -22,7 +26,7 @@ export const Navigation = styled.div`
   box-sizing: border-box;
   top: 0;
   right: 0;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     flex-direction: row;
     margin: 10px;
     border: none;

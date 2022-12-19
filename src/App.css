@@ -55,3 +55,7 @@ code {
 select {
   background-color: var(--background-color);
 }
+
+ul {
+  padding-inline-start: 0px;
+}

@@ -77,44 +77,44 @@ export const data: dataType = {
     },
     Switch: {
       title: 'Switch',
-      about: `스위치는 사용자가 on 또는 off의 두 가지 값 중 하나를 선택할 수 있는 입력 위젯입니다. 스위치는 이진 입력의 역할을 하는 체크 박스 및 토글 버튼과 유사합니다. 그러나 한 가지 차이점은 스위치는 이진 입력에만 사용할 수 있지만, 체크박스와 토글 버튼은 중간 상태를 지원하는 옵션을 허용됩니다.체크 박스와 토글 버튼은 선택하거나 선택하지 않을 수 있으며 선택적으로 부분 선택 상태를 허용할 수도 있습니다.`,
-      a11y: `시각적 또는 인지적으로 불편한 유저가 스위치 상태를 더 쉽게 이해할 수 있도록 상태(ON 또는 OFF)에 해당하는 텍스트가 그래픽 상태 옆에 표시된다. CSS 속성 선택기는 표시된 레이블이 아리아 체크 속성의 값과 동기화되는지 확인합니다.
-      참고: 화면 판독기에 의한 상태의 중복 알림을 방지하기 위해 상태 표시기는 아리아가 숨겨진 보조 기술로부터 숨겨집니다.
-      브라우저 또는 운영 체제의 고대비 설정이 활성화된 경우를 포함하여 시각적으로 불편한 사람이 그래픽 상태를 볼 수 있고 식별할 수 있도록 하려면 간격, 테두리 너비 및 채우기가 중요합니다.
-      
-      스위치 상태의 그래픽 표현을 쉽게 인식할 수 있도록 스위치 상태 컨테이너에는 두 개의 픽셀 경계가 사용되고 On/Off 상태를 나타내는 원의 채우기에는 단색이 사용됩니다.
-      사용자가 용기와 스위치 상태를 표시하는 데 사용되는 원 사이의 차이를 인식할 수 있도록 용기 테두리와 원 사이에 두 픽셀의 공간이 있습니다.
+      about: `To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+      NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
+      Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
+      To enhance perceivability when operating the switches, visual keyboard focus and hover are styled using the CSS :hover and :focus pseudo-classes:`,
+      a11y: `A switch is an input widget that allows users to choose one of two values: on or off. Switches are similar to checkboxes and toggle buttons, which can also serve as binary inputs. One difference, however, is that switches can only be used for binary input while checkboxes and toggle buttons allow implementations the option of supporting a third middle state. Checkboxes can be checked or not checked and can optionally also allow for a partially checked state. Toggle buttons can be pressed or not pressed and can optionally allow for a partially pressed state.
+        Since switch, checkbox, and toggle button all offer binary input, they are often functionally interchangeable. Choose the role that best matches both the visual design and semantics of the user interface. For instance, there are some circumstances where the semantics of on or off would be easier for assistive technology users to understand than the semantics of checked or unchecked, and vice versa. Consider a widget for turning lights on or off. In this case, screen reader output of Lights switch on is more user friendly than Lights checkbox checked. However, if the same input were in a group of inputs labeled Which of the following must be included in your pre-takeoff procedures?, Lights checkbox checked would make more sense.
+        Important: it is critical the label on a switch does not change when its state changes.
         `,
       keyboard: `
-      Tab : 스위치로 포커스시킵니다..
-      Space | Enter :	스위치를 on, off 토글시킵니다.`,
+      Tab : Moves keyboard focus to the switch.
+      Space | Enter :	Toggle switch between on and off.`,
       props: `
       delay(string):
-      On Off 애니메이션 시간을 결정합니다.
+      It determines transition delay.
 
       height(string):
-      컴포넌트의 높이를 결정합니다.
+      It determines Component(bar, ball, component) height.
       
       ratio(string):
-      컴포넌트의 좌우 비율을 결정합니다.
+      It determines Component aspect ratio.
 
       text(string):
-      스위치 on 일 때 텍스트를 결정합니다.
+      It determines switch on text.
 
       bg(string):
-      on일 때 배경을 결정합니다.
+      It determines switch on background.
 
       border(string):
-      테두리를 결정합니다.
+      It determines switch on border.
 
       offText(string):
-      스위치 off 일 때 텍스트를 결정합니다.
+      It determines switch off text.
 
       offBg(string):
-      off일 때 배경을 결정합니다.
+      It determines switch off background.
 
       offBorder(string):
-      스위치가 꺼졌을 때 테두리 색을 결정합니다.
+      It determines switch off border.
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
     },
@@ -209,44 +209,44 @@ export const data: dataType = {
     },
     Switch: {
       title: 'Switch',
-      about: `To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
-      NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
-      Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
-      To enhance perceivability when operating the switches, visual keyboard focus and hover are styled using the CSS :hover and :focus pseudo-classes:`,
-      a11y: `A switch is an input widget that allows users to choose one of two values: on or off. Switches are similar to checkboxes and toggle buttons, which can also serve as binary inputs. One difference, however, is that switches can only be used for binary input while checkboxes and toggle buttons allow implementations the option of supporting a third middle state. Checkboxes can be checked or not checked and can optionally also allow for a partially checked state. Toggle buttons can be pressed or not pressed and can optionally allow for a partially pressed state.
-        Since switch, checkbox, and toggle button all offer binary input, they are often functionally interchangeable. Choose the role that best matches both the visual design and semantics of the user interface. For instance, there are some circumstances where the semantics of on or off would be easier for assistive technology users to understand than the semantics of checked or unchecked, and vice versa. Consider a widget for turning lights on or off. In this case, screen reader output of Lights switch on is more user friendly than Lights checkbox checked. However, if the same input were in a group of inputs labeled Which of the following must be included in your pre-takeoff procedures?, Lights checkbox checked would make more sense.
-        Important: it is critical the label on a switch does not change when its state changes.
+      about: `스위치는 사용자가 on 또는 off의 두 가지 값 중 하나를 선택할 수 있는 입력 위젯입니다. 스위치는 이진 입력의 역할을 하는 체크 박스 및 토글 버튼과 유사합니다. 그러나 한 가지 차이점은 스위치는 이진 입력에만 사용할 수 있지만, 체크박스와 토글 버튼은 중간 상태를 지원하는 옵션을 허용됩니다.체크 박스와 토글 버튼은 선택하거나 선택하지 않을 수 있으며 선택적으로 부분 선택 상태를 허용할 수도 있습니다.`,
+      a11y: `시각적 또는 인지적으로 불편한 유저가 스위치 상태를 더 쉽게 이해할 수 있도록 상태(ON 또는 OFF)에 해당하는 텍스트가 그래픽 상태 옆에 표시된다. CSS 속성 선택기는 표시된 레이블이 아리아 체크 속성의 값과 동기화되는지 확인합니다.
+      참고: 화면 판독기에 의한 상태의 중복 알림을 방지하기 위해 상태 표시기는 아리아가 숨겨진 보조 기술로부터 숨겨집니다.
+      브라우저 또는 운영 체제의 고대비 설정이 활성화된 경우를 포함하여 시각적으로 불편한 사람이 그래픽 상태를 볼 수 있고 식별할 수 있도록 하려면 간격, 테두리 너비 및 채우기가 중요합니다.
+      
+      스위치 상태의 그래픽 표현을 쉽게 인식할 수 있도록 스위치 상태 컨테이너에는 두 개의 픽셀 경계가 사용되고 On/Off 상태를 나타내는 원의 채우기에는 단색이 사용됩니다.
+      사용자가 용기와 스위치 상태를 표시하는 데 사용되는 원 사이의 차이를 인식할 수 있도록 용기 테두리와 원 사이에 두 픽셀의 공간이 있습니다.
         `,
       keyboard: `
-      Tab : Moves keyboard focus to the switch.
-      Space | Enter :	Toggle switch between on and off.`,
+      Tab : 스위치로 포커스시킵니다..
+      Space | Enter :	스위치를 on, off 토글시킵니다.`,
       props: `
       delay(string):
-      It determines transition delay.
+      On Off 애니메이션 시간을 결정합니다.
 
       height(string):
-      It determines Component(bar, ball, component) height.
+      컴포넌트의 높이를 결정합니다.
       
       ratio(string):
-      It determines Component aspect ratio.
+      컴포넌트의 좌우 비율을 결정합니다.
 
       text(string):
-      It determines switch on text.
+      스위치 on 일 때 텍스트를 결정합니다.
 
       bg(string):
-      It determines switch on background.
+      on일 때 배경을 결정합니다.
 
       border(string):
-      It determines switch on border.
+      테두리를 결정합니다.
 
       offText(string):
-      It determines switch off text.
+      스위치 off 일 때 텍스트를 결정합니다.
 
       offBg(string):
-      It determines switch off background.
+      off일 때 배경을 결정합니다.
 
       offBorder(string):
-      It determines switch off border.
+      스위치가 꺼졌을 때 테두리 색을 결정합니다.
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
     },

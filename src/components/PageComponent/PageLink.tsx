@@ -2,7 +2,11 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { ContextStore } from '../../store';
-const LinkContainer = styled.div`
+
+interface children {
+  children?: string | JSX.Element | JSX.Element[];
+}
+const LinkContainer = styled.div<children>`
   &.active {
     font-weight: 500;
     border: 1px solid var(--actvie-link-container);
@@ -11,9 +15,8 @@ const LinkContainer = styled.div`
   padding: 5px 5px;
 `;
 
-export interface LinkProps {
+export interface LinkProps extends children {
   to: string;
-  children?: string | JSX.Element;
   pathname?: string;
 }
 
