@@ -78,7 +78,7 @@ export function PageNavigation() {
           <>
             <Heading category="Introduction">
               <PageLink to="/intro" pathname={pathname}>
-                Why React WAI
+                Get Started
               </PageLink>
             </Heading>
             <ComponentPageNavigation pathname={pathname} keyword={keyword} />
