@@ -30,8 +30,8 @@ export const Navigation = styled.div`
     flex-direction: row;
     margin: 10px;
     border: none;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
     flex-direction: row-reverse;
   }
 `;

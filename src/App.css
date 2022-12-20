@@ -11,7 +11,7 @@
 
   --synopsis-width: 230px;
 
-  --editor-background-color: #1e1e1e;
+  --editor-background-color: #1e293b;
   --editor-font-color: #ffffff;
   --input-border-color: #4e4e4e;
 }
@@ -53,6 +53,7 @@ code {
     monospace;
 }
 select {
+  padding: 2px 2px;
   background-color: var(--background-color);
 }
 

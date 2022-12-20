@@ -14,15 +14,16 @@ export const data: dataType = {
       a11y: 'Because an alert is for critical information, assistive technologies may provide special behaviors designed to help call attention to changes in the text of an alert. For example, screen readers may interrupt all other speech and preface announcement of the new alert text with a special sound or phrase.',
       keyboard: 'Not applicable',
       props: `
-      width(string):
-      It determines Component width
+width(string):
+It determines Component width.
 
-      height(string):
-      It determines Component height
+height(string):
+It determines Component height.
 
-      children(string):
-      It determines Alert message     
-      `,
+children(string):
+It determines Alert message.
+
+`,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/alert/',
     },
     A11yHidden: {
@@ -35,18 +36,20 @@ export const data: dataType = {
       Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
 
       To make the graphical representation of the state of a switch readily perceivable, two pixel borders are used for the switch state container and a solid color is used for the fill of the circles indicating the on and off states.
-      To ensure users can perceive the difference between the container and the circles used to indicate the state of the switch, there are two pixels of space between the container border and the circles.`,
+      To ensure users can perceive the difference between the container and the circles used to indicate the state of the switch, there are two pixels of space between the container border and the circles.
+      `,
       keyboard: 'Not applicable',
       props: `
-      as(string):
-      It determines Component tag
+as(string):
+It determines Component tag.
 
-      focusable(string):
-      It determines Component focusable
+focusable(string):
+It determines Component focusable.
 
-      children(string):
-      It determines accessible hidden message 
-      `,
+children(string):
+It determines accessible hidden message.
+
+`,
 
       ref: 'https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/',
     },
@@ -58,64 +61,70 @@ export const data: dataType = {
       a11y: 'The set of links is structured using an ordered list .A nav element labeled Breadcrumb identifies the structure as a breadcrumb trail and makes it a navigation landmark so that it is easy to locate.',
       keyboard: 'Not applicable',
       props: `
-      src(string):
-      It determines Breadcrumb config address
+src(string):
+It determines Breadcrumb config address.
 
-      root(string):
-      It determines Breadcrumb first path
-      
-      map(object):
-      It determines Breadcrumb path 
-      
-      width(string):
-      It determines Breadcrumb width
-      
-      splitter(string):
-      It determines Breadcrumb splitter    
-      `,
+root(string):
+It determines Breadcrumb first path.
+
+map(object):
+It determines Breadcrumb path.
+
+width(string):
+It determines Breadcrumb width.
+
+splitter(string):
+It determines Breadcrumb splitter.
+
+`,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
     },
     Switch: {
       title: 'Switch',
-      about: `To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+      about: `
+      To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
       NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
       Spacing, border widths and fill are important to ensure the graphical states are visible and discernible to people with visual impairments, including when browser or operating system high contrast settings are enabled:
-      To enhance perceivability when operating the switches, visual keyboard focus and hover are styled using the CSS :hover and :focus pseudo-classes:`,
-      a11y: `A switch is an input widget that allows users to choose one of two values: on or off. Switches are similar to checkboxes and toggle buttons, which can also serve as binary inputs. One difference, however, is that switches can only be used for binary input while checkboxes and toggle buttons allow implementations the option of supporting a third middle state. Checkboxes can be checked or not checked and can optionally also allow for a partially checked state. Toggle buttons can be pressed or not pressed and can optionally allow for a partially pressed state.
+      To enhance perceivability when operating the switches, visual keyboard focus and hover are styled using the CSS :hover and :focus pseudo-classes:
+      `,
+      a11y: `
+        A switch is an input widget that allows users to choose one of two values: on or off. Switches are similar to checkboxes and toggle buttons, which can also serve as binary inputs. One difference, however, is that switches can only be used for binary input while checkboxes and toggle buttons allow implementations the option of supporting a third middle state. Checkboxes can be checked or not checked and can optionally also allow for a partially checked state. Toggle buttons can be pressed or not pressed and can optionally allow for a partially pressed state.
         Since switch, checkbox, and toggle button all offer binary input, they are often functionally interchangeable. Choose the role that best matches both the visual design and semantics of the user interface. For instance, there are some circumstances where the semantics of on or off would be easier for assistive technology users to understand than the semantics of checked or unchecked, and vice versa. Consider a widget for turning lights on or off. In this case, screen reader output of Lights switch on is more user friendly than Lights checkbox checked. However, if the same input were in a group of inputs labeled Which of the following must be included in your pre-takeoff procedures?, Lights checkbox checked would make more sense.
         Important: it is critical the label on a switch does not change when its state changes.
         `,
       keyboard: `
-      Tab : Moves keyboard focus to the switch.
-      Space | Enter :	Toggle switch between on and off.`,
-      props: `
-      delay(string):
-      It determines transition delay.
-
-      height(string):
-      It determines Component(bar, ball, component) height.
-      
-      ratio(string):
-      It determines Component aspect ratio.
-
-      text(string):
-      It determines switch on text.
-
-      bg(string):
-      It determines switch on background.
-
-      border(string):
-      It determines switch on border.
-
-      offText(string):
-      It determines switch off text.
-
-      offBg(string):
-      It determines switch off background.
-
-      offBorder(string):
-      It determines switch off border.
+Tab : Moves keyboard focus to the switch.
+Space | Enter :	Toggle switch between on and off.
       `,
+      props: `
+delay(string):
+It determines transition delay.
+
+height(string):
+It determines Component(bar, ball, component) height.
+
+ratio(string):
+It determines Component aspect ratio.
+
+text(string):
+It determines switch on text.
+
+bg(string):
+It determines switch on background.
+
+border(string):
+It determines switch on border.
+
+offText(string):
+It determines switch off text.
+
+offBg(string):
+It determines switch off background.
+
+offBorder(string):
+It determines switch off border.
+
+`,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
     },
     Title: {
@@ -125,17 +134,19 @@ export const data: dataType = {
       a11y: 'Heading tags should be in order. That means an <h1> is followed by an <h2>, an <h2> is followed by a <h2> or <h3> and so on. It is ok to skip heading levels when going up in order (ex. <h4> to <h1>).',
       keyboard: 'Not applicable',
       props: `
-      lv(string|number):
-      It determines Heading tag level
+lv(string|number):
+It determines Heading tag level
 
-      hidden(string):
-      It determines accessible hidden
+hidden(string):
+It determines accessible hidden
 
-      focusable(string):
-      It determines Component focusable
+focusable(string):
+It determines Component focusable
 
-      children(string):
-      It determines title text`,
+children(string):
+It determines title text
+
+      `,
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
@@ -155,14 +166,16 @@ export const data: dataType = {
       a11y: 'Alert는 중요한 정보에 대한 것이기 때문에 보조 기술은 Alert 텍스트의 변경 사항에 대한 주의를 환기하는 데 도움이 되도록 설계된 특별한 동작을 제공할 수 있습니다. 예를 들어, 스크린리더는 다른 모든 음성을 중단하고 특별한 소리나 문구로 새 경고 텍스트의 서문을 발표할 수 있습니다.',
       keyboard: '없음',
       props: `
-      width(string):
-      컴포넌트의 너비를 결정합니다.
+width(string):
+컴포넌트의 너비를 결정합니다.
 
-      height(string):
-      컴포넌트의 높이를 결정합니다.
+height(string):
+컴포넌트의 높이를 결정합니다.
 
-      children(string):
-      Alert 메시지를 결정합니다.`,
+children(string):
+Alert 메시지를 결정합니다.
+
+      `,
     },
     A11yHidden: {
       title: 'A11yHidden',
@@ -170,15 +183,17 @@ export const data: dataType = {
         '때때로 웹 페이지에서 요소를 숨겨야 하는 경우가 있습니다. 일반적인 방법은 CSS(display:none; and visibility:hidden;) 또는 HTML5 hidden attribute을 사용하는 것이다. 이러한 properties는 화면의 요소뿐만 아니라 스크린리더 사용자를 위한 요소도 숨깁니다. 따라서, 이러한 요소들은 보조 기술(AT)로 보이거나 음성화가 안될 것입니다',
       a11y: 'A11yHidden은 스크린 유저가 접근할 때는 접근할 수 있지만, 화면에서 요소를 사라지게 합니다. 이상적으로는 모든 해결책을 결합하여 모든 브라우저에서 제대로 작동하는지 확인하는 것이 가장 좋습니다.',
       keyboard: '없음',
-      props: `        
-      as(string):
-      컴포넌트의 태그를 결정합니다.
+      props: `
+as(string):
+컴포넌트의 태그를 결정합니다.
 
-      focusable(string):
-      컴포넌트의 포커스 가능함을 결정합니다.
+focusable(string):
+컴포넌트의 포커스 가능함을 결정합니다.
 
-      children(string):
-      스크린 리더에서 읽을 메시지를 결정합니다.`,
+children(string):
+스크린 리더에서 읽을 메시지를 결정합니다.
+
+`,
 
       ref: 'https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/',
     },
@@ -190,63 +205,69 @@ export const data: dataType = {
       a11y: '링크들은 정렬된 목록으로 구성되어 있습니다. Breadcrumb라고 라벨된 네비게이션 요소는 구조를 breadcrumb trail로 식별하고, 원하는 주소로 쉽게 이동하기 위해 네비게이션 랜드마크를 생성합니다.',
       keyboard: '없음',
       props: `
-      src(string):
-      컴포넌트에 적용된 주소를 결정합니다.
+src(string):
+컴포넌트에 적용된 주소를 결정합니다.
 
-      root(string):
-      컴포넌트의 첫 번째 path를 결정합니다.
-      
-      map(object):
-      컴포넌트의 path 단어를 결정합니다.
-      
-      width(string):
-      컴포넌트의 너비를 결정합니다
-      
-      splitter(string):
-      path를 나누는 문자를 정합니다.    
+root(string):
+컴포넌트의 첫 번째 path를 결정합니다.
+
+map(object):
+컴포넌트의 path 단어를 결정합니다.
+
+width(string):
+컴포넌트의 너비를 결정합니다
+
+splitter(string):
+path를 나누는 문자를 정합니다.
+
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
     },
     Switch: {
       title: 'Switch',
-      about: `스위치는 사용자가 on 또는 off의 두 가지 값 중 하나를 선택할 수 있는 입력 위젯입니다. 스위치는 이진 입력의 역할을 하는 체크 박스 및 토글 버튼과 유사합니다. 그러나 한 가지 차이점은 스위치는 이진 입력에만 사용할 수 있지만, 체크박스와 토글 버튼은 중간 상태를 지원하는 옵션을 허용됩니다.체크 박스와 토글 버튼은 선택하거나 선택하지 않을 수 있으며 선택적으로 부분 선택 상태를 허용할 수도 있습니다.`,
-      a11y: `시각적 또는 인지적으로 불편한 유저가 스위치 상태를 더 쉽게 이해할 수 있도록 상태(ON 또는 OFF)에 해당하는 텍스트가 그래픽 상태 옆에 표시된다. CSS 속성 선택기는 표시된 레이블이 아리아 체크 속성의 값과 동기화되는지 확인합니다.
+      about: `
+      스위치는 사용자가 on 또는 off의 두 가지 값 중 하나를 선택할 수 있는 입력 위젯입니다. 스위치는 이진 입력의 역할을 하는 체크 박스 및 토글 버튼과 유사합니다. 그러나 한 가지 차이점은 스위치는 이진 입력에만 사용할 수 있지만, 체크박스와 토글 버튼은 중간 상태를 지원하는 옵션을 허용됩니다.체크 박스와 토글 버튼은 선택하거나 선택하지 않을 수 있으며 선택적으로 부분 선택 상태를 허용할 수도 있습니다.
+      `,
+      a11y: `
+      시각적 또는 인지적으로 불편한 유저가 스위치 상태를 더 쉽게 이해할 수 있도록 상태(ON 또는 OFF)에 해당하는 텍스트가 그래픽 상태 옆에 표시된다. CSS 속성 선택기는 표시된 레이블이 아리아 체크 속성의 값과 동기화되는지 확인합니다.
       참고: 화면 판독기에 의한 상태의 중복 알림을 방지하기 위해 상태 표시기는 아리아가 숨겨진 보조 기술로부터 숨겨집니다.
       브라우저 또는 운영 체제의 고대비 설정이 활성화된 경우를 포함하여 시각적으로 불편한 사람이 그래픽 상태를 볼 수 있고 식별할 수 있도록 하려면 간격, 테두리 너비 및 채우기가 중요합니다.
       
       스위치 상태의 그래픽 표현을 쉽게 인식할 수 있도록 스위치 상태 컨테이너에는 두 개의 픽셀 경계가 사용되고 On/Off 상태를 나타내는 원의 채우기에는 단색이 사용됩니다.
       사용자가 용기와 스위치 상태를 표시하는 데 사용되는 원 사이의 차이를 인식할 수 있도록 용기 테두리와 원 사이에 두 픽셀의 공간이 있습니다.
-        `,
+      `,
       keyboard: `
-      Tab : 스위치로 포커스시킵니다..
-      Space | Enter :	스위치를 on, off 토글시킵니다.`,
+Tab : 스위치로 포커스시킵니다.
+Space | Enter :	스위치를 on, off 토글시킵니다.
+      `,
       props: `
-      delay(string):
-      On Off 애니메이션 시간을 결정합니다.
+delay(string):
+On Off 애니메이션 시간을 결정합니다.
 
-      height(string):
-      컴포넌트의 높이를 결정합니다.
-      
-      ratio(string):
-      컴포넌트의 좌우 비율을 결정합니다.
+height(string):
+컴포넌트의 높이를 결정합니다.
 
-      text(string):
-      스위치 on 일 때 텍스트를 결정합니다.
+ratio(string):
+컴포넌트의 좌우 비율을 결정합니다.
 
-      bg(string):
-      on일 때 배경을 결정합니다.
+text(string):
+스위치 on 일 때 텍스트를 결정합니다.
 
-      border(string):
-      테두리를 결정합니다.
+bg(string):
+on일 때 배경을 결정합니다.
 
-      offText(string):
-      스위치 off 일 때 텍스트를 결정합니다.
+border(string):
+테두리를 결정합니다.
 
-      offBg(string):
-      off일 때 배경을 결정합니다.
+offText(string):
+스위치 off 일 때 텍스트를 결정합니다.
 
-      offBorder(string):
-      스위치가 꺼졌을 때 테두리 색을 결정합니다.
+offBg(string):
+off일 때 배경을 결정합니다.
+
+offBorder(string):
+스위치가 꺼졌을 때 테두리 색을 결정합니다.
+
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
     },
@@ -256,18 +277,20 @@ export const data: dataType = {
         '<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.',
       a11y: '제목 태그는 순서대로 배치되어야만 한다. 즉, <h1> 뒤에 <h2>, <h2> 뒤에 <h2> 또는 <h3> 등이 뒤따른다는 것이다. 순서대로 올라갈 때 헤딩 레벨을 건너뛰어도 괜찮습니다(예: <h4>에서 <h1>).',
       keyboard: '없음',
-      props: `    
-      lv(string|number):
-      타이틀의 태그 레벨을 결정합니다.
+      props: `
+lv(string|number):
+타이틀의 태그 레벨을 결정합니다.
 
-      hidden(string):
-      컴포넌트의 A11yHidden을 결정합니다.
+hidden(string):
+컴포넌트의 A11yHidden을 결정합니다.
 
-      focusable(string):
-      컴포넌트의 포커스 가능함을 결정합니다.
+focusable(string):
+컴포넌트의 포커스 가능함을 결정합니다.
 
-      children(string):
-      컴포넌트의 텍스트 내용을 결정합니다.`,
+children(string):
+컴포넌트의 텍스트 내용을 결정합니다.
+
+      `,
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
@@ -276,7 +299,7 @@ export const data: dataType = {
       demo: '이용',
       a11y: '접근성',
       keyboard: '키보드 입력',
-      props: '프롭스',
+      props: 'Props',
     },
   },
 };

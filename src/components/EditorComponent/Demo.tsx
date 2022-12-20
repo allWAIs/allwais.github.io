@@ -16,6 +16,7 @@ export const DemoContent = styled.div`
 export const DemoContainer = styled.div`
   overflow-x: auto;
   background-color: var(--editor-background-color);
+  border-radius: 10px;
 `;
 export function Demo({ children }: Demo) {
   return (

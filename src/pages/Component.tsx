@@ -11,6 +11,7 @@ const PropsIntro = styled.div`
   padding: 10px;
   line-height: 40px;
   white-space: break-spaces;
+  border-radius: 10px;
 `;
 export function Component() {
   const { lang } = useContext(ContextStore);
@@ -30,7 +31,7 @@ export function Component() {
       <Title id="a11y">{ref.a11y}</Title>
       <div>{comp.a11y}</div>
       <Title id="keyboard">{ref.keyboard}</Title>
-      <div>{comp.keyboard}</div>
+      <PropsIntro>{comp.keyboard}</PropsIntro>
       <Title id="props">{ref.props}</Title>
       <PropsIntro>{comp.props}</PropsIntro>
 

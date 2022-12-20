@@ -52,6 +52,7 @@ export function Usage1() {
             name="focusable"
             init={focusable}
             handler={setFocusable}
+            n={2}
           />
         </ComponentTag>
         <StringInput
