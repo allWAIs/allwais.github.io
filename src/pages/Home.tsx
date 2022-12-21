@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { data } from './Home.lang';
 import { ContextStore } from '../store';
 import { Sidebar, ContentsContainer } from '../components';
+import { Component } from './Component';
 const GetStartedButton = styled.button`
   color: var(--background-color);
   background-color: var(--font-color);
@@ -30,7 +31,18 @@ export function Home() {
         <Title lv="3">Alert</Title>
         <Alert>Alert Example</Alert>
         <Title lv="3">Breadcrumb</Title>
-        <Breadcrumb splitter=">" />
+        <Breadcrumb
+          src="https://allWAIS.github.io/Components/Alert"
+          splitter=">"
+        />
+        <Breadcrumb
+          src="https://allWAIS.github.io/Components/Breadcrumb"
+          splitter=">"
+        />
+        <Breadcrumb
+          src="https://allWAIS.github.io/Components/Title"
+          splitter=">"
+        />
         <Title lv="3">Switch</Title>
         <Switch
           onClick={() => setSwitchStatus(!switchStatus)}

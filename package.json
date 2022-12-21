@@ -48,7 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://allwais.github.io/allWAIs/",
+  "homepage": "https://allwais.github.io/",
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
     "gh-pages": "^4.0.0"
