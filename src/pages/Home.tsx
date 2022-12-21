@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Alert, Breadcrumb, Switch, Title } from 'react-wai';
+import { Alert, Switch, Title, Breadcrumb } from 'react-wai';
 import styled from '@emotion/styled';
 import { data } from './Home.lang';
 import { ContextStore } from '../store';

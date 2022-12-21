@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Title, Breadcrumb } from 'react-wai';
-
 import {
   ComponentTag,
   Demo,
