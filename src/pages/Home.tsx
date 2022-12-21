@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 import { data } from './Home.lang';
 import { ContextStore } from '../store';
 import { Sidebar, ContentsContainer } from '../components';
-import { Component } from './Component';
 const GetStartedButton = styled.button`
   color: var(--background-color);
   background-color: var(--font-color);
