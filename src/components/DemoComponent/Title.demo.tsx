@@ -32,7 +32,7 @@ export function BasicUsage() {
 export function Usage1() {
   const [lv, setLv] = useState('2');
   const [color, setColor] = useState('blue');
-  const [hidden, setHidden] = useState('false');
+  const [hidden, setHidden] = useState(false);
   const [focusable, setFocusable] = useState(false);
   const [children, setChildren] = useState('This is title');
   const lvCheck = (lv: string | number): typeLv => {
@@ -46,8 +46,8 @@ export function Usage1() {
       <Demo>
         <ComponentTag name="Title">
           <StringInput name="lv" init={lv} handler={setLv} n={2} />
-          <StringInput name="hidden" init={hidden} handler={setHidden} n={2} />
           <StyleInput name="color" init={color} handler={setColor} n={2} />
+          <BooleanInput name="hidden" init={hidden} handler={setHidden} n={2} />
           <BooleanInput
             name="focusable"
             init={focusable}
@@ -66,7 +66,7 @@ export function Usage1() {
       </Demo>
       <Title
         lv={lvCheck(lv)}
-        hidden={hidden === 'false' ? false : true}
+        hidden={hidden}
         focusable={focusable}
         style={{ color }}
       >

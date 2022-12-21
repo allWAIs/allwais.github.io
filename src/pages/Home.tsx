@@ -11,6 +11,15 @@ const GetStartedButton = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
 `;
+
+const breadMap = {
+  [`${location.origin}`]: 'Home',
+  Components: '',
+  Title: 'Title Component',
+  Switch: 'Switch Component',
+  Alert: 'Alert Component',
+  Breadcrumb: 'Breadcrumb Component',
+};
 export function Home() {
   const { lang } = useContext(ContextStore);
   const text = data[lang];
@@ -31,15 +40,18 @@ export function Home() {
         <Alert>Alert Example</Alert>
         <Title lv="3">Breadcrumb</Title>
         <Breadcrumb
-          src="https://allWAIS.github.io/Components/Alert"
+          map={breadMap}
+          src={window.location + '/Components/Alert'}
           splitter=">"
         />
         <Breadcrumb
-          src="https://allWAIS.github.io/Components/Breadcrumb"
+          map={breadMap}
+          src={window.location + '/Components/Breadcrumb'}
           splitter=">"
         />
         <Breadcrumb
-          src="https://allWAIS.github.io/Components/Title"
+          map={breadMap}
+          src={window.location + '/Components/Title'}
           splitter=">"
         />
         <Title lv="3">Switch</Title>

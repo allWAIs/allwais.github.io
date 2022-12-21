@@ -33,6 +33,10 @@ export function BasicUsage() {
 function Usage1() {
   const [state, setState] = useState(false);
   const [children, setChildren] = useState('This is Alert msg');
+  const [width, setWidth] = useState('100%');
+  const [height, setHeight] = useState('100%');
+  const [color, setColor] = useState('black');
+  const [bg, setBg] = useState('hsl(200deg 20% 90%)');
   return (
     <>
       <Demo>
@@ -40,29 +44,48 @@ function Usage1() {
         <br />
         <Func name="DarkMode" n={2}>
           <Return n={2}>
-            <ComponentTag name="button" click="toggle" clickVar="false" n={2} />
+            <ComponentTag name="button" click="toggle" clickVar="false" n={4} />
             <br />
-            <ChildrenText n={4}>Show Alert!</ChildrenText>
+            <ChildrenText n={6}>Show Alert!</ChildrenText>
             <br />
-            <ComponentTag name="button" status="closed" n={2} />
+            <ComponentTag name="button" status="closed" n={4} />
+            <br />
+            <ComponentTag name="Alert" n={4}>
+              <StringInput name="width" init={width} handler={setWidth} n={6} />
 
-            <br />
-            <ComponentTag name="Alert" n={2} />
+              <StringInput
+                name="height"
+                init={height}
+                handler={setHeight}
+                n={6}
+              />
+
+              <StringInput name="color" init={color} handler={setColor} n={6} />
+
+              <StringInput name="bg" init={bg} handler={setBg} n={6} />
+            </ComponentTag>
+
             <StringInput
               name="children"
               init={children}
               handler={setChildren}
-              n={4}
+              n={6}
             />
             <br />
-            <ComponentTag name="Alert" status="closed" n={2} />
+            <ComponentTag name="Alert" status="closed" n={4} />
             <br />
           </Return>
         </Func>
       </Demo>
       <Title lv="3">Usage1 Component</Title>
-      <button onClick={() => setState(true)}>Show Alert!</button>
-      {state ? <Alert>{children}</Alert> : null}
+      <button style={{ color: 'black' }} onClick={() => setState(true)}>
+        Show Alert!
+      </button>
+      {state ? (
+        <Alert width={width} height={height} bg={bg} color={color}>
+          {children}
+        </Alert>
+      ) : null}
     </>
   );
 }

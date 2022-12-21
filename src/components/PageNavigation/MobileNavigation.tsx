@@ -20,6 +20,8 @@ const MobileNavigationContainer = styled.div`
 
   @media screen and (max-width: 1050px) {
     display: block;
+    width: 99vw;
+    background: var(--background-color);
   }
 `;
 const SidebarOpenButton = styled(Hamburger)`

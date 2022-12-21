@@ -13,7 +13,7 @@ export function ChildrenText(props: ChildrenText) {
   return (
     <>
       <Indent n={props.n} />
-      <Text>{props.children}</Text>;
+      <Text>{props.children}</Text>
     </>
   );
 }

@@ -15,13 +15,24 @@ export const data: dataType = {
       keyboard: 'Not applicable',
       props: `
 width(string):
-It determines Component width.
+- default: undefined
+- It determines Component width.
 
 height(string):
-It determines Component height.
+- default: undefined
+- It determines Component height.
+
+color(string):
+- default: black
+- It determines Component color.
+
+bg(string):
+- default: rgb(224, 231, 235)
+- It determines Component background.
 
 children(string):
-It determines Alert message.
+- required
+- It determines Alert message.
 
 `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/alert/',
@@ -41,13 +52,16 @@ It determines Alert message.
       keyboard: 'Not applicable',
       props: `
 as(string):
-It determines Component tag.
+- default: span
+- It determines Component tag.
 
 focusable(string):
-It determines Component focusable.
+- default: false
+- It determines Component focusable.
 
-children(string):
-It determines accessible hidden message.
+children(string | JSX.Element):
+- default: undefined
+- It determines accessible hidden message.
 
 `,
 
@@ -62,19 +76,24 @@ It determines accessible hidden message.
       keyboard: 'Not applicable',
       props: `
 src(string):
-It determines Breadcrumb config address.
+- default: location.origin
+- It determines Breadcrumb config address.
 
 root(string):
-It determines Breadcrumb first path.
+- default: location.origin.split("/")[0]
+- It determines Breadcrumb first path.
 
 map(object):
-It determines Breadcrumb path.
+- default: {}
+- It determines Breadcrumb path.
 
 width(string):
-It determines Breadcrumb width.
+- default: fit-content
+- It determines Breadcrumb width.
 
 splitter(string):
-It determines Breadcrumb splitter.
+- default: "/"
+- It determines Breadcrumb splitter.
 
 `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
@@ -98,31 +117,44 @@ Space | Enter :	Toggle switch between on and off.
       `,
       props: `
 delay(string):
-It determines transition delay.
+- default: 0.3s
+- It determines transition delay.
 
 height(string):
-It determines Component(bar, ball, component) height.
+- default: 20px
+- It determines Component(bar, ball, component) height.
 
 ratio(string):
-It determines Component aspect ratio.
+- default: 2
+- It determines Component aspect ratio.
 
 text(string):
-It determines switch on text.
+- default: on
+- It determines switch on text.
 
 bg(string):
-It determines switch on background.
+- default: green
+- It determines switch on background.
 
 border(string):
-It determines switch on border.
+- default: green
+- It determines switch on border.
 
 offText(string):
-It determines switch off text.
+- default: off
+- It determines switch off text.
 
 offBg(string):
-It determines switch off background.
+- default: none
+- It determines switch off background.
 
 offBorder(string):
-It determines switch off border.
+- default: none
+- It determines switch off border.
+
+children(string):
+- default: Switch
+- It determines switch name.
 
 `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
@@ -135,16 +167,20 @@ It determines switch off border.
       keyboard: 'Not applicable',
       props: `
 lv(string|number):
-It determines Heading tag level
+- default: 2
+- It determines Heading tag level
 
-hidden(string):
-It determines accessible hidden
+hidden(boolean):
+- default: false
+- It determines accessible hidden
 
-focusable(string):
-It determines Component focusable
+focusable(boolean):
+- default:false
+- It determines Component focusable
 
 children(string):
-It determines title text
+- default: null
+- It determines title text
 
       `,
 
@@ -167,10 +203,20 @@ It determines title text
       keyboard: '없음',
       props: `
 width(string):
-컴포넌트의 너비를 결정합니다.
+- 기본값: undefined
+- 컴포넌트의 너비를 결정합니다.
 
 height(string):
-컴포넌트의 높이를 결정합니다.
+- 기본값: undefined
+- 컴포넌트의 높이를 결정합니다.
+
+color(string):
+- 기본값: black
+- 컴포넌트의 높이를 결정합니다.
+
+bg(string):
+- 기본값: rgb(224, 231, 235)
+- 컴포넌트의 높이를 결정합니다.
 
 children(string):
 Alert 메시지를 결정합니다.
@@ -185,13 +231,16 @@ Alert 메시지를 결정합니다.
       keyboard: '없음',
       props: `
 as(string):
-컴포넌트의 태그를 결정합니다.
+- 기본값: span
+- 컴포넌트의 태그를 결정합니다.
 
 focusable(string):
-컴포넌트의 포커스 가능함을 결정합니다.
+- 기본값: false
+- 컴포넌트의 포커스 가능함을 결정합니다.
 
 children(string):
-스크린 리더에서 읽을 메시지를 결정합니다.
+- 기본값: undefined
+- 스크린 리더에서 읽을 메시지를 결정합니다.
 
 `,
 
@@ -206,19 +255,24 @@ children(string):
       keyboard: '없음',
       props: `
 src(string):
-컴포넌트에 적용된 주소를 결정합니다.
+- default: location.origin
+- 컴포넌트에 적용된 주소를 결정합니다.
 
 root(string):
-컴포넌트의 첫 번째 path를 결정합니다.
+- default: location.origin.split("/")[0]
+- 컴포넌트의 첫 번째 path를 결정합니다.
 
 map(object):
-컴포넌트의 path 단어를 결정합니다.
+- default: {}
+- 컴포넌트의 path 단어를 결정합니다.
 
 width(string):
-컴포넌트의 너비를 결정합니다
+- default: fit-content
+- 컴포넌트의 너비를 결정합니다
 
 splitter(string):
-path를 나누는 문자를 정합니다.
+- default: "/"
+- path를 나누는 문자를 정합니다.
 
       `,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/',
@@ -242,33 +296,46 @@ Space | Enter :	스위치를 on, off 토글시킵니다.
       `,
       props: `
 delay(string):
-On Off 애니메이션 시간을 결정합니다.
+- 기본값: 0.3s
+- On Off 애니메이션 시간을 결정합니다.
 
 height(string):
-컴포넌트의 높이를 결정합니다.
+- 기본값: 20px 
+- 컴포넌트의 높이를 결정합니다.
 
 ratio(string):
-컴포넌트의 좌우 비율을 결정합니다.
+- 기본값: 2
+- 컴포넌트의 좌우 비율을 결정합니다.
 
 text(string):
-스위치 on 일 때 텍스트를 결정합니다.
+- 기본값: on
+- 스위치 on 일 때 텍스트를 결정합니다.
 
 bg(string):
-on일 때 배경을 결정합니다.
+- 기본값: green
+- on일 때 배경을 결정합니다.
 
 border(string):
-테두리를 결정합니다.
+- 기본값: green
+- 테두리를 결정합니다.
 
 offText(string):
-스위치 off 일 때 텍스트를 결정합니다.
+- 기본값: off
+- 스위치 off 일 때 텍스트를 결정합니다.
 
 offBg(string):
-off일 때 배경을 결정합니다.
+- 기본값: none
+- off일 때 배경을 결정합니다.
 
 offBorder(string):
-스위치가 꺼졌을 때 테두리 색을 결정합니다.
+- 기본값: none
+- 스위치가 꺼졌을 때 테두리 색을 결정합니다.
 
-      `,
+children(string):
+- 기본값: Switch
+- 스위치의 이름을 결정합니다.
+
+`,
       ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
     },
     Title: {
@@ -279,16 +346,20 @@ offBorder(string):
       keyboard: '없음',
       props: `
 lv(string|number):
-타이틀의 태그 레벨을 결정합니다.
+- 기본값: 2
+- 타이틀의 태그 레벨을 결정합니다.
 
-hidden(string):
-컴포넌트의 A11yHidden을 결정합니다.
+hidden(boolean):
+- 기본값: false
+- 컴포넌트의 A11yHidden을 결정합니다.
 
-focusable(string):
-컴포넌트의 포커스 가능함을 결정합니다.
+focusable(boolean):
+- 기본값: false
+- 컴포넌트의 포커스 가능함을 결정합니다.
 
 children(string):
-컴포넌트의 텍스트 내용을 결정합니다.
+- 기본값: null
+- 컴포넌트의 텍스트 내용을 결정합니다.
 
       `,
 

@@ -12,7 +12,7 @@ import {
  * type
  */
 interface status {
-  status?: 'closed' | 'self-closed' | 'spread' | undefined;
+  status?: 'closed' | 'self-closed' | 'spread' | 'spread-closed' | undefined;
 }
 interface Clickprops {
   name: string;
@@ -56,7 +56,7 @@ function ClickProps({ name, vari, n }: Clickprops) {
 function Spread({ status }: status) {
   return (
     <>
-      {status === 'spread' ? (
+      {status === 'spread' || status === 'spread-closed' ? (
         <>
           <br />
         </>
@@ -88,7 +88,9 @@ export function ComponentTag({
         </>
       ) : null}
       {children}
-      <TagText>{status === 'self-closed' ? '/' : null}</TagText>
+      <TagText>
+        {status === 'self-closed' || status === 'spread-closed' ? '/' : null}
+      </TagText>
       <TagText>&gt;</TagText>
     </>
   );

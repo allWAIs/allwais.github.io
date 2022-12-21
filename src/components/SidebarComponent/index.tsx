@@ -33,6 +33,7 @@ export const Navigation = styled.div`
     padding-right: 5px;
     padding-top: 5px;
     flex-direction: row-reverse;
+    z-index: 2;
   }
 `;
 
