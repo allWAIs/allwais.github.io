@@ -15,10 +15,6 @@ const GetStartedButton = styled.button`
 const breadMap = {
   [`${location.origin}`]: 'Home',
   Components: '',
-  Title: 'Title Component',
-  Switch: 'Switch Component',
-  Alert: 'Alert Component',
-  Breadcrumb: 'Breadcrumb Component',
 };
 export function Home() {
   const { lang } = useContext(ContextStore);
