@@ -64,6 +64,7 @@ export function Usage1() {
         <br />
         <ComponentTag name="Title" status="closed" />
       </Demo>
+      <Title lv="3">Usage1 Component</Title>
       <Title
         lv={lvCheck(lv)}
         hidden={hidden === 'false' ? false : true}

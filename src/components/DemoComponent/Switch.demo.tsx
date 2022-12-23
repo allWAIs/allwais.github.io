@@ -29,6 +29,7 @@ function BasicUsage() {
           <br />
         </Func>
       </Demo>
+      <Title lv="3">Basic Usage Component</Title>
       <Switch status={state} onClick={() => setState(!state)} />
     </>
   );
@@ -125,6 +126,8 @@ function Usage1() {
           <br />
         </Func>
       </Demo>
+      <Title lv="3">Usage1 Component</Title>
+
       <Switch
         a11yHidden={a11yHidden}
         height={height}

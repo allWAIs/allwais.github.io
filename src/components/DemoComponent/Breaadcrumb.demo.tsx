@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Title } from 'react-wai';
-import { Breadcrumb } from 'react-wai';
+import { Title, Breadcrumb } from 'react-wai';
 import {
   ComponentTag,
   Demo,
@@ -15,6 +14,7 @@ function BasicUsage() {
       <Demo>
         <ComponentTag name="Breadcrumb" status="self-closed" />
       </Demo>
+      <Title lv="3">Basic Usage Component</Title>
       <Breadcrumb />
     </>
   );
@@ -72,6 +72,8 @@ function UsageBredcrumb() {
         <br />
         <ComponentTag name="Breadcrumb" status="closed" />
       </Demo>
+      <Title lv="3">Usage1 Component</Title>
+
       <Breadcrumb root={root} map={map} width={width} splitter={splitter} />
     </>
   );
