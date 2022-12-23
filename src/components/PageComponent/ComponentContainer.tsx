@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 /**
  * type
  */
@@ -40,7 +41,7 @@ const ComponentContainer = styled.div`
  */
 export function ContentsContainer({ children }: ContentsContainerProps) {
   return (
-    <ContentContainer>
+    <ContentContainer id="scroll">
       <ComponentContainer>{children}</ComponentContainer>
     </ContentContainer>
   );

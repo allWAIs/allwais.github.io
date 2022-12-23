@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Title } from 'react-wai';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { data } from './Component.language';
 import { ContextStore } from '../store';
@@ -13,7 +13,13 @@ const PropsIntro = styled.div`
   white-space: break-spaces;
   border-radius: 10px;
 `;
+
 export function Component() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.querySelector('#scroll')?.scrollTo(0, 0);
+    console.log(1);
+  }, [pathname]);
   const { lang } = useContext(ContextStore);
   const { componentId } = useParams();
   const id = componentId || '';
