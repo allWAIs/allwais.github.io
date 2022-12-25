@@ -19,7 +19,7 @@
     "react-router": "^6.4.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "react-wai": "^0.0.22",
+    "react-wai": "^0.0.24",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
   },
@@ -48,7 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://allwais.github.io/allWAIs/",
+  "homepage": "https://allwais.github.io/",
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
     "gh-pages": "^4.0.0"

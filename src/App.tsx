@@ -19,6 +19,7 @@ function App() {
           <PageNavigation />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/allWAIs" element={<Home />} />
             <Route path="/intro" element={<Intro />} />
             <Route path="/open-issue" element={<OpenIssue />} />
             <Route path="/issue-complete" element={<IssueComplete />} />

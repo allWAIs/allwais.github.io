@@ -32,14 +32,14 @@ export function Component() {
       <Title id="about">{ref.about}</Title>
 
       <div>{comp.about}</div>
+      <Title id="props">{ref.props}</Title>
+      <PropsIntro>{comp.props}</PropsIntro>
       <Title id="demo">{ref.demo}</Title>
       <DemoComponent componentName={comp.title} />
       <Title id="a11y">{ref.a11y}</Title>
       <div>{comp.a11y}</div>
       <Title id="keyboard">{ref.keyboard}</Title>
       <PropsIntro>{comp.keyboard}</PropsIntro>
-      <Title id="props">{ref.props}</Title>
-      <PropsIntro>{comp.props}</PropsIntro>
 
       <Sidebar>
         {Object.entries(ref).map(([key, value]) => (

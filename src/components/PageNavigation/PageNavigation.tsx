@@ -10,16 +10,30 @@ import { ContextStore } from '../../store';
 /**
  * styled
  */
-const StyledLogo = styled(Logo)`
+const ImageLogo = styled(Logo)`
   width: 100px;
   height: 100px;
   stroke: var(--font-color);
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+`;
+const TextLogo = styled.span`
+  display: none;
+  font-size: 30px;
+  font-weight: 700;
+  @media screen and (max-width: 1050px) {
+    display: block;
+  }
 `;
 const CloseSidebar = styled.button`
   position: absolute;
   top: 10px;
-  right: 10px;
-  border: none;
+  left: 10px;
+  border: 1px solid var(--font-color);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
   background: none;
   display: none;
   @media screen and (max-width: 1050px) {
@@ -42,10 +56,11 @@ const StyledPageNavigation = styled.div<{ sidebar: boolean }>`
   box-sizing: border-box;
   overflow-y: auto;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   background-color: var(--sidebar-color);
   transition: 0.3s all;
   @media screen and (max-width: 1050px) {
+    padding-top: 70px;
     transform: ${({ sidebar }) =>
       sidebar ? 'translate3d(0, 0, 0)' : 'translate3d(-100%, 0, 0)'};
   }
@@ -64,7 +79,8 @@ export function PageNavigation() {
       <MobileNavigation sidebar={sidebar} handler={setSidebar} />
       <StyledPageNavigation sidebar={sidebar}>
         <PageLink to="/">
-          <StyledLogo />
+          <ImageLogo />
+          <TextLogo>allWAIs</TextLogo>
         </PageLink>
         <CloseSidebar onClick={closeSidebar}>⨉</CloseSidebar>
         <Search

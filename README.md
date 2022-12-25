@@ -44,7 +44,3 @@ Alert
 Breadcrumb
 Switch
 Title
-
-## Demo
-
-[DemoPage](https://allwais.github.io/allWAIs)

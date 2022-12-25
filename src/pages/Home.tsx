@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Alert, Breadcrumb, Switch, Title } from 'react-wai';
+import { Alert, Switch, Title, Breadcrumb } from 'react-wai';
 import styled from '@emotion/styled';
 import { data } from './Home.lang';
 import { ContextStore } from '../store';
@@ -11,6 +11,11 @@ const GetStartedButton = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
 `;
+
+const breadMap = {
+  [`${location.origin}`]: 'Home',
+  Components: '',
+};
 export function Home() {
   const { lang } = useContext(ContextStore);
   const text = data[lang];
@@ -30,7 +35,21 @@ export function Home() {
         <Title lv="3">Alert</Title>
         <Alert>Alert Example</Alert>
         <Title lv="3">Breadcrumb</Title>
-        <Breadcrumb splitter=">" />
+        <Breadcrumb
+          map={breadMap}
+          src={window.location + '/Components/Alert'}
+          splitter=">"
+        />
+        <Breadcrumb
+          map={breadMap}
+          src={window.location + '/Components/Breadcrumb'}
+          splitter=">"
+        />
+        <Breadcrumb
+          map={breadMap}
+          src={window.location + '/Components/Title'}
+          splitter=">"
+        />
         <Title lv="3">Switch</Title>
         <Switch
           onClick={() => setSwitchStatus(!switchStatus)}
