@@ -39,8 +39,12 @@ root.render(
 
 ## Contents
 
-A11yHidden
-Alert
-Breadcrumb
-Switch
-Title
+- [A11yHidden](https://allwais.github.io/Components/A11yHidden)
+
+- [Alert](https://allwais.github.io/Components/Alert)
+
+- [Breadcrumb](https://allwais.github.io/Components/Breadcrumb)
+
+- [Switch](https://allwais.github.io/Components/Switch)
+
+- [Title](https://allwais.github.io/Components/Title)
