@@ -19,6 +19,7 @@ interface ObjectBracket {
 
 interface StringInput {
   name: string;
+  //eslint-disable-next-line
   handler: Dispatch<SetStateAction<any>>;
   init: string;
   sameline?: boolean;
@@ -26,6 +27,7 @@ interface StringInput {
 }
 interface TagInput {
   name: string;
+  //eslint-disable-next-line
   handler: Dispatch<SetStateAction<any>>;
   init: string;
   n?: number;

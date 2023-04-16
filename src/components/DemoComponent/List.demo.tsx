@@ -1,4 +1,4 @@
-import { useState, ElementType } from 'react';
+import { useState } from 'react';
 import { List, ListItem } from 'react-wai';
 import {
   ComponentTag,
@@ -13,7 +13,6 @@ import {
   StringInput,
   BracketText,
   TagText,
-  ComponentText,
   PropsText,
 } from './../EditorComponent';
 
