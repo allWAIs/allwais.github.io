@@ -3,6 +3,7 @@ import { Indent } from './Indent';
 /**
  * styled
  */
+
 interface TextProps {
   name: string;
   origin: string;
@@ -30,7 +31,7 @@ const BracketText = styled.span`
 const BracketText2 = styled.span`
   color: #e2d100;
 `;
-const DeclareText = styled.span`
+export const DeclareText = styled.span`
   color: #569cd6;
 `;
 const ConstText = styled.span`
@@ -41,6 +42,9 @@ const TagText = styled.span`
 `;
 const FuncName = styled.span`
   color: #dcdcaa;
+`;
+export const KeyText = styled.span`
+  color: #c39178;
 `;
 function Import({ name, origin }: TextProps) {
   return (

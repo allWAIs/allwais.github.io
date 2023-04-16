@@ -186,6 +186,52 @@ children(string):
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
+    List: {
+      title: 'List',
+      about:
+        'A list component that is easily accessible by the keyboard. You can use List and ListItem to move to the component you want.',
+      a11y: 'You can orient the list with direction profiles.The direction changes the value of the aria-orientation, affecting the keyboard interaction.',
+      keyboard: `
+Tab: Move focus to next layer. Move out of the component if the currently focused element is the last layer of the component
+
+Shift+Tab: Move focus to previous layer. Move out of the component if the currently focused element is the first layer of the component
+
+↑/←: Move focus to previous elements in the layer. Do not move if the currently focused element is the first element in the layer.
+
+↓/→: Move focus to the next element in the layer. Do not move if the currently focused element is the last element in the layer.
+
+Home (⌘+↑/← for macOS): Move focus to the first element in the layer
+
+End (⌘+↓/→ for macOS): Move focus to the last element in the layer
+
+Ctrl+Home: Move focus to the first element in the component
+
+Ctrl+End: Move focus to the last element in the component
+
+PageUp (⌥+↑/← for macOS): Move to previous element as many times as specified in the layer
+
+PageDown (⌥+↓/→ for macOS): Move to the next element by the specified number in the layer`,
+      props: `   
+as?:'ul'|'ol';
+- default: 'ul'
+- It determines  type of list tag
+direction?:'row':'col';
+- default: 'row'
+- It determines logical/visual direction of list.
+- If direction is row, use arrowleft/arrowright key to move forward/backward
+- If direction is col, use arrowup/arrowdown key to move forward/backward
+nested?:boolean;
+- default: 'false'
+- It determines whether this component is nested in other List component.
+- When it is true, List component is children of ListItem component.
+step?:number;
+- It determines number of items that will be skipped when pageup/pagedown key pressed in keyboard navigation
+children: React.ReactNode;
+- default : undefined;
+- It determines items of list`,
+
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
+    },
     ref: {
       about: 'About this component',
       demo: 'Usage',
@@ -219,9 +265,7 @@ bg(string):
 - 컴포넌트의 높이를 결정합니다.
 
 children(string):
-Alert 메시지를 결정합니다.
-
-      `,
+Alert 메시지를 결정합니다.`,
     },
     A11yHidden: {
       title: 'A11yHidden',
@@ -344,6 +388,50 @@ children(string):
         '<h1>과 <h2>를 탐색하면 사용자에게 페이지의 개요와 페이지 내용의 구조 제공할 수 있습니다. <h3> ~ <h6> 요소를 통해 각 섹션의 세부 사항을 빠르게 이해할 수 있습니다.',
       a11y: '제목 태그는 순서대로 배치되어야만 한다. 즉, <h1> 뒤에 <h2>, <h2> 뒤에 <h2> 또는 <h3> 등이 뒤따른다는 것이다. 순서대로 올라갈 때 헤딩 레벨을 건너뛰어도 괜찮습니다(예: <h4>에서 <h1>).',
       keyboard: '없음',
+      props: `
+lv(string|number):
+- 기본값: 2
+- 타이틀의 태그 레벨을 결정합니다.
+
+hidden(boolean):
+- 기본값: false
+- 컴포넌트의 A11yHidden을 결정합니다.
+
+focusable(boolean):
+- 기본값: false
+- 컴포넌트의 포커스 가능함을 결정합니다.
+
+children(string):
+- 기본값: null
+- 컴포넌트의 텍스트 내용을 결정합니다.
+
+      `,
+
+      ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
+    },
+    List: {
+      title: 'List',
+      about:
+        '키보드로 쉽게 접근할 수 있는 리스트 컴포넌트입니다. List와 ListItem을 이용하여 원하는 컴포넌트로 이동할 수 있습니다.',
+      a11y: 'direction props로 리스트의 방향을 정할 수 있습니다.direction이 aria-orientation의 값을 바꾸며, 키보드 인터렉션에 영향을 줍니다.',
+      keyboard: `
+as?:'ul'|'ol';
+- 기본값: 'ul'
+- 리스트 태그의 타입을 정합니다
+direction?:'row':'col';
+- 기본값: 'row'
+- 리스트의 방향을 정합니다
+- 방향이 row인 경우, 화살표 좌 우를 사용하여 앞 뒤로 이동할 수 있습니다.
+- 방향이 col인 경우, 화살표 위 아래를 사용하여, 앞 뒤로 이동할 수 있습니다.
+nested?:boolean;
+- 기본값: false
+- 리스트 컴포넌트 안에 다른 컴포넌트가 들어오는지 여부를 정합니다.
+- true라면 리스트 컴포넌트에 List 컴포넌트는 ListItem의 children이 됩니다.
+step?:number;
+- pageup과 pagedown 키를 눌렀을 때 몇 칸씩 이동하는지를 결정합니다.
+children: React.ReactNode;
+- 기본값 : undefined;
+- 리스트의 아이템을 결정합니다.`,
       props: `
 lv(string|number):
 - 기본값: 2
