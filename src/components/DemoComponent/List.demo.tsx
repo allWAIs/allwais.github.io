@@ -18,6 +18,7 @@ import {
 
 interface ArrayProps {
   name: string;
+  //eslint-disable-next-line
   object: Array<any>;
 }
 
