@@ -414,7 +414,7 @@ children(string):
       about:
         '키보드로 쉽게 접근할 수 있는 리스트 컴포넌트입니다. List와 ListItem을 이용하여 원하는 컴포넌트로 이동할 수 있습니다.',
       a11y: 'direction props로 리스트의 방향을 정할 수 있습니다.direction이 aria-orientation의 값을 바꾸며, 키보드 인터렉션에 영향을 줍니다.',
-      keyboard: `
+      props: `
 as?:'ul'|'ol';
 - 기본값: 'ul'
 - 리스트 태그의 타입을 정합니다
@@ -432,24 +432,27 @@ step?:number;
 children: React.ReactNode;
 - 기본값 : undefined;
 - 리스트의 아이템을 결정합니다.`,
-      props: `
-lv(string|number):
-- 기본값: 2
-- 타이틀의 태그 레벨을 결정합니다.
+      keyboard: `
+Tab: 다음 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 마지막 계층일 경우 컴포넌트 바깥으로 탈출
 
-hidden(boolean):
-- 기본값: false
-- 컴포넌트의 A11yHidden을 결정합니다.
+Shift+Tab: 이전 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 처음 계층일 경우 컴포넌트 바깥으로 탈출
 
-focusable(boolean):
-- 기본값: false
-- 컴포넌트의 포커스 가능함을 결정합니다.
+↑/←: 계층 내 이전 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 처음 요소일 경우 이동하지 않음.
 
-children(string):
-- 기본값: null
-- 컴포넌트의 텍스트 내용을 결정합니다.
+↓/→: 계층 내 다음 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 마지막 요소일 경우 이동하지 않음.
 
-      `,
+Home(macOS의 경우 ⌘+↑/←): 계층 내 첫번째 요소로 포커스 이동
+
+End(macOS의 경우 ⌘+↓/→): 계층 내 마지막 요소로 포커스 이동
+
+Ctrl+Home: 컴포넌트 내 첫번째 요소로 포커스 이동
+
+Ctrl+End: 컴포넌트 내 마지막 요소로 포커스 이동
+
+PageUp(macOS의 경우 ⌥+↑/←): 계층 내 지정한 개수만큼 이전 요소로 이동
+
+PageDown(macOS의 경우 ⌥+↓/→): 계층 내 지정한 개수만큼 다음 요소로 이동
+`,
 
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
     },
