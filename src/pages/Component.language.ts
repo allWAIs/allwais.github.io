@@ -1,10 +1,45 @@
+interface keyboardEvent {
+  key: string;
+  event: string;
+}
 interface dataType {
   [key: string]: {
     [key: string]: {
-      [key: string]: string;
+      keyboard: string | keyboardEvent[];
+      title: string;
+      about: string;
+      a11y: string;
+      props: string;
+      ref: string;
+      demo?: string;
     };
   };
 }
+interface refType {
+  [key: string]: {
+    about: string;
+    demo: string;
+    a11y: string;
+    keyboard: string;
+    props: string;
+  };
+}
+export const ref: refType = {
+  english: {
+    about: 'About this component',
+    demo: 'Usage',
+    a11y: 'Accessibility Features',
+    keyboard: 'Keyboard Interaction',
+    props: 'Props',
+  },
+  korean: {
+    about: '컴포넌트 특징',
+    demo: '이용',
+    a11y: '접근성',
+    keyboard: '키보드 입력',
+    props: 'Props',
+  },
+};
 export const data: dataType = {
   english: {
     Alert: {
@@ -111,10 +146,10 @@ splitter(string):
         Since switch, checkbox, and toggle button all offer binary input, they are often functionally interchangeable. Choose the role that best matches both the visual design and semantics of the user interface. For instance, there are some circumstances where the semantics of on or off would be easier for assistive technology users to understand than the semantics of checked or unchecked, and vice versa. Consider a widget for turning lights on or off. In this case, screen reader output of Lights switch on is more user friendly than Lights checkbox checked. However, if the same input were in a group of inputs labeled Which of the following must be included in your pre-takeoff procedures?, Lights checkbox checked would make more sense.
         Important: it is critical the label on a switch does not change when its state changes.
         `,
-      keyboard: `
-Tab : Moves keyboard focus to the switch.
-Space | Enter :	Toggle switch between on and off.
-      `,
+      keyboard: [
+        { key: 'Tab', event: 'Moves keyboard focus to the switch.' },
+        { key: 'Space | Enter', event: 'Toggle switch between on and off.' },
+      ],
       props: `
 delay(string):
 - default: 0.3s
@@ -191,26 +226,54 @@ children(string):
       about:
         'A list component that is easily accessible by the keyboard. You can use List and ListItem to move to the component you want.',
       a11y: 'You can orient the list with direction profiles.The direction changes the value of the aria-orientation, affecting the keyboard interaction.',
-      keyboard: `
-Tab: Move focus to next layer. Move out of the component if the currently focused element is the last layer of the component
-
-Shift+Tab: Move focus to previous layer. Move out of the component if the currently focused element is the first layer of the component
-
-↑/←: Move focus to previous elements in the layer. Do not move if the currently focused element is the first element in the layer.
-
-↓/→: Move focus to the next element in the layer. Do not move if the currently focused element is the last element in the layer.
-
-Home (⌘+↑/← for macOS): Move focus to the first element in the layer
-
-End (⌘+↓/→ for macOS): Move focus to the last element in the layer
-
-Ctrl+Home: Move focus to the first element in the component
-
-Ctrl+End: Move focus to the last element in the component
-
-PageUp (⌥+↑/← for macOS): Move to previous element as many times as specified in the layer
-
-PageDown (⌥+↓/→ for macOS): Move to the next element by the specified number in the layer`,
+      keyboard: [
+        {
+          key: 'Tab',
+          event:
+            'Move focus to next layer. Move out of the component if the currently focused element is the last layer of the component',
+        },
+        {
+          key: 'Shift+Tab',
+          event:
+            'Move focus to previous layer. Move out of the component if the currently focused element is the first layer of the component',
+        },
+        {
+          key: '↑/←',
+          event:
+            'Move focus to previous elements in the layer. Do not move if the currently focused element is the first element in the layer.',
+        },
+        {
+          key: '↓/→',
+          event:
+            'Move focus to the next element in the layer. Do not move if the currently focused element is the last element in the layer.',
+        },
+        {
+          key: 'Home (⌘+↑/← for macOS)',
+          event: 'Move focus to the first element in the layer',
+        },
+        {
+          key: 'End (⌘+↓/→ for macOS)',
+          event: 'Move focus to the last element in the layer',
+        },
+        {
+          key: 'Ctrl+Home',
+          event: 'Move focus to the first element in the component',
+        },
+        {
+          key: 'Ctrl+End',
+          event: 'Move focus to the last element in the component',
+        },
+        {
+          key: 'PageUp (⌥+↑/← for macOS)',
+          event:
+            'Move to previous element as many times as specified in the layer',
+        },
+        {
+          key: 'PageDown (⌥+↓/→ for macOS)',
+          event:
+            'Move to the next element by the specified number in the layer',
+        },
+      ],
       props: `   
 as?:'ul'|'ol';
 - default: 'ul'
@@ -229,15 +292,7 @@ step?:number;
 children: React.ReactNode;
 - default : undefined;
 - It determines items of list`,
-
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
-    },
-    ref: {
-      about: 'About this component',
-      demo: 'Usage',
-      a11y: 'Accessibility Features',
-      keyboard: 'Keyboard Interaction',
-      props: 'Props',
     },
   },
   korean: {
@@ -266,6 +321,7 @@ bg(string):
 
 children(string):
 Alert 메시지를 결정합니다.`,
+      ref: 'https://www.w3.org/WAI/ARIA/apg/patterns/alert/',
     },
     A11yHidden: {
       title: 'A11yHidden',
@@ -334,10 +390,10 @@ splitter(string):
       스위치 상태의 그래픽 표현을 쉽게 인식할 수 있도록 스위치 상태 컨테이너에는 두 개의 픽셀 경계가 사용되고 On/Off 상태를 나타내는 원의 채우기에는 단색이 사용됩니다.
       사용자가 용기와 스위치 상태를 표시하는 데 사용되는 원 사이의 차이를 인식할 수 있도록 용기 테두리와 원 사이에 두 픽셀의 공간이 있습니다.
       `,
-      keyboard: `
-Tab : 스위치로 포커스시킵니다.
-Space | Enter :	스위치를 on, off 토글시킵니다.
-      `,
+      keyboard: [
+        { key: 'Tab', event: '스위치로 포커스시킵니다.' },
+        { key: 'Space | Enter', event: '스위치를 on, off 토글시킵니다.' },
+      ],
       props: `
 delay(string):
 - 기본값: 0.3s
@@ -432,36 +488,57 @@ step?:number;
 children: React.ReactNode;
 - 기본값 : undefined;
 - 리스트의 아이템을 결정합니다.`,
-      keyboard: `
-Tab: 다음 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 마지막 계층일 경우 컴포넌트 바깥으로 탈출
-
-Shift+Tab: 이전 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 처음 계층일 경우 컴포넌트 바깥으로 탈출
-
-↑/←: 계층 내 이전 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 처음 요소일 경우 이동하지 않음.
-
-↓/→: 계층 내 다음 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 마지막 요소일 경우 이동하지 않음.
-
-Home(macOS의 경우 ⌘+↑/←): 계층 내 첫번째 요소로 포커스 이동
-
-End(macOS의 경우 ⌘+↓/→): 계층 내 마지막 요소로 포커스 이동
-
-Ctrl+Home: 컴포넌트 내 첫번째 요소로 포커스 이동
-
-Ctrl+End: 컴포넌트 내 마지막 요소로 포커스 이동
-
-PageUp(macOS의 경우 ⌥+↑/←): 계층 내 지정한 개수만큼 이전 요소로 이동
-
-PageDown(macOS의 경우 ⌥+↓/→): 계층 내 지정한 개수만큼 다음 요소로 이동
-`,
-
+      keyboard: [
+        {
+          key: 'Tab',
+          event:
+            '다음 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 마지막 계층일 경우 컴포넌트 바깥으로 탈출',
+        },
+        {
+          key: 'Shift+Tab',
+          event:
+            '이전 계층으로 포커스 이동. 현재 포커스된 요소가 컴포넌트의 처음 계층일 경우 컴포넌트 바깥으로 탈출',
+        },
+        {
+          key: '↑/←',
+          event:
+            '계층 내 이전 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 처음 요소일 경우 이동하지 않음.',
+        },
+        {
+          key: '↓/→',
+          event:
+            '계층 내 다음 요소로 포커스 이동. 현재 포커스된 요소가 계층 내 마지막 요소일 경우 이동하지 않음.',
+        },
+        {
+          key: 'Home(macOS의 경우 ⌘+↑/←)',
+          event: '계층 내 첫번째 요소로 포커스 이동',
+        },
+        {
+          key: 'End(macOS의 경우 ⌘+↓/→)',
+          event: '계층 내 마지막 요소로 포커스 이동',
+        },
+        {
+          key: '',
+          event: '',
+        },
+        {
+          key: 'Ctrl+Home',
+          event: '컴포넌트 내 첫번째 요소로 포커스 이동',
+        },
+        {
+          key: 'Ctrl+End',
+          event: '컴포넌트 내 마지막 요소로 포커스 이동',
+        },
+        {
+          key: 'PageUp(macOS의 경우 ⌥+↑/←)',
+          event: '계층 내 지정한 개수만큼 이전 요소로 이동',
+        },
+        {
+          key: 'PageDown(macOS의 경우 ⌥+↓/→)',
+          event: '계층 내 지정한 개수만큼 다음 요소로 이동',
+        },
+      ],
       ref: 'https://a11y-style-guide.com/style-guide/section-structure.html',
-    },
-    ref: {
-      about: '컴포넌트 특징',
-      demo: '이용',
-      a11y: '접근성',
-      keyboard: '키보드 입력',
-      props: 'Props',
     },
   },
 };
